@@ -25,7 +25,6 @@ using GXPEngine;                                // GXPEngine contains the engine
 // Create portal class to teleport between levels
 // Create SelectChar class to select characters in main screen
 // You can see whos player 1 and player 2 depending on ID
-// Hey
 
 
 public class MyGame : Game
