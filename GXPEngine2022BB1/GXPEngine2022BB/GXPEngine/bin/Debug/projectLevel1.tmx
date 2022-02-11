@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="325" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="48">
  <tileset firstgid="1" name="lvl2Tiles" tilewidth="16" tileheight="16" tilecount="726" columns="66">
-  <image source="../../../../../../../../../../term2/gameDesign/game/myGame/GXPEngine2022BB1/GXPEngine2022BB/GXPEngine/bin/Debug/tiledMaps/tilesets/lvl2Tiles.png" width="1056" height="176"/>
+  <image source="lvl2Tiles.png" width="1056" height="176"/>
  </tileset>
  <imagelayer id="3" name="background">
   <image source="greekBackground.png" width="400" height="480"/>
