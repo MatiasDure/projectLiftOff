@@ -14,7 +14,7 @@ public class Egyptian : Player
     protected override void Update()
     {
         Jumping(Key.UP);
-        Ability(Key.K);
+        Ability(Key.K,20);
         base.Update();
     }
 

@@ -16,7 +16,7 @@ public class HUD:GameObject
         health = new EasyDraw(25, 10, false);
         mana = new EasyDraw(50, 10, false);
         mana.SetXY(player.playerType > 0 ? game.width - 70:0, 20);
-        health.SetXY(player.playerType > 0 ? game.width - 70 : 0,0);
+        health.SetXY(player.playerType > 0 ? game.width - 70 : 0, 0);
         AddChild(health);   
         AddChild(mana);
     }

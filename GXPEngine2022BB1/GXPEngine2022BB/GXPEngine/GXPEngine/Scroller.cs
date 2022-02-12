@@ -16,7 +16,7 @@ public class Scroller:GameObject
 
     void Update()
     {
-        Move();  
+        Move();
     }
 
     void Move()

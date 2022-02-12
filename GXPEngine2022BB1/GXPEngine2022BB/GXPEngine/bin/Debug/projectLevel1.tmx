@@ -41,8 +41,8 @@
 </data>
  </layer>
  <objectgroup id="2" name="Object Layer 1">
-  <object id="2" name="character" type="Egyptian" x="110.667" y="388.667" width="64" height="64"/>
-  <object id="9" name="character 2" type="Greek" x="11.3333" y="392.333" width="64" height="64"/>
+  <object id="2" name="character" type="Egyptian" x="118.779" y="385.963" width="39" height="64"/>
+  <object id="9" name="character 2" type="Greek" x="22.1488" y="384.221" width="39" height="64"/>
   <object id="10" name="gate" type="Portal" x="5054.06" y="116.121" width="139.091" height="341.818">
    <properties>
     <property name="target" value="2"/>

@@ -10,8 +10,6 @@ using TiledMapParser;
 public class Player:AnimationSprite
 {
 
-    Vector2 screenPos;
-
     static int TypePlayer = 0;
 
     public int playerType = 0;
@@ -23,23 +21,33 @@ public class Player:AnimationSprite
     //player attributes 
     int[] _attributes; //health, mana
     float velocityY;
+    float velocityX;
+    public float currentLvlVelocityX;
 
-    public int[] Attributes{ get => _attributes; set => _attributes = value; } 
+    public int[] Attributes { get => _attributes; private set => _attributes = value; }
+
+    //scrollers position
+    public float scrollerPositionX;
 
     //player states
     bool isJumping;
     bool isFalling;
     bool isBoosting;
     bool isSlowing;
+    bool isCollidingWall;
+
+    //injured anim
+    int lastTimeCollided;
+    int[] rgb = new int[] { 255,255,255 }; //curent as hit anim
 
     //animation speed
     float animationSpeed;
+    int lastTimeChangedAnimSpeed;
 
     //affect speed
-    int lastTimeChangedAnimSpeed = 0;
-    int timeBoost = 0; 
-    int lastTimeBoost = 0;
+    int timeBoost;
     float lastSpeed;
+    int lastTimeBoosted;
 
     //mana
     int lastTimeManaIncreased = 0;
@@ -50,48 +58,52 @@ public class Player:AnimationSprite
 
     public Player(string pFileName, int pCol, int pRow, TiledObject obj = null):base(pFileName,pCol,pRow)
     {
-        playerType = TypePlayer;
-        TypePlayer++;
+        playerType = TypePlayer; //Determine which player each instance is, so we can manipulate them individually
+        TypePlayer = TypePlayer > 0 ? 0 : +1; //Determines the amount of players in game, max 2
         _attributes = new int[] { 3, 0 }; //attributes = health, mana
-        jumpForce = -9.25f;
-        gravity = 0.25f;
-        velocityY = 0;
+        jumpForce = -9.25f; 
+        gravity = 0.35f;
         collider.isTrigger = true;
     }
 
     virtual protected void Update()
     {
+        Edges();
         CheckHP();
-        HorizontalMovement();
+        if(lastTimeCollided <= Time.time)
+        {
+            rgb[1] = rgb[2] = 255;
+            SetColor(rgb[0],rgb[1],rgb[2]);
+        }
+        if (isCollidingWall) CollidedWall();
+        else HorizontalMovement();
         IncreaseMana();
         AnimSpeed();
         this.Animate(0.25f);
     }
     protected void HorizontalMovement()
     {
-        float velocityX;
-        if (isBoosting) velocityX = 3;
-        else if (isSlowing) velocityX = 1;
-        else velocityX = 2;
+        velocityX = currentLvlVelocityX;
+        if (isBoosting) velocityX *= 1.5f;
+        else if (isSlowing) velocityX *= 0.5f;
 
         MoveUntilCollision(velocityX,0);
     }
 
     protected void IncreaseMana()
     {
-        if(Attributes[1] < 100 && lastTimeManaIncreased < Time.time)
+        if(_attributes[1] < 100 && lastTimeManaIncreased < Time.time)
         {
-            lastTimeManaIncreased = Time.time + 1000;
+            lastTimeManaIncreased = Time.time + 500;
             Attributes[1] += 2;
-            Console.WriteLine(Attributes[1]);
         }
     }
 
-    virtual protected void Ability(int pKey)
+    virtual protected void Ability(int pKey, int pAmountManaCost)
     {
-        if (Input.GetKey(pKey) && lastTimeManaUsed < Time.time && Attributes[1] > 4)
+        if (Input.GetKey(pKey) && lastTimeManaUsed < Time.time && _attributes[1] > 4)
         {
-            Attributes[1] -= 5;
+            Attributes[1] -= pAmountManaCost;
             lastTimeManaUsed = Time.time + 2000;
         }
     }
@@ -106,21 +118,23 @@ public class Player:AnimationSprite
         else if (isBoosting)
         {
             animationSpeed = 0.1f;
-            if (Time.time >= timeBoost)
-            {
-                isBoosting = false;
-                animationSpeed = lastSpeed;
-            }
+            isBoosting = RestoreSpeed();
         }
         else if (isSlowing)
         {
             animationSpeed = 0.05f;
-            if (Time.time >= timeBoost)
-            {
-                isSlowing = false;
-                animationSpeed = lastSpeed;
-            }
+            isSlowing = RestoreSpeed();
         }
+    }
+
+    bool RestoreSpeed()
+    {
+        if(Time.time >= timeBoost)
+        {
+            animationSpeed = lastSpeed;
+            return false;
+        }
+        return true;
     }
 
     protected void Jumping(int pToJump)
@@ -148,44 +162,48 @@ public class Player:AnimationSprite
     protected void Edges()
     {
         Vector2 screenPos = TransformPoint(0, 0);
-        if (screenPos.x < 0 || 
-            screenPos.x >= game.width - width ||
-            screenPos.y < 0 || 
-            screenPos.y >= game.height - height) SetCollided();
+        isCollidingWall = screenPos.x < 0; 
     }
 
-    protected void SetCollided()
+    protected void CollidedWall()
     {
-        screenPos.x = game.width / 2;
-        Console.WriteLine("hey");
+        SetInjured();
+        x = scrollerPositionX;
+        y = 0;
+    }
+
+    void SetInjured()
+    {
+        lastTimeCollided = Time.time + 300;
+        //ReceiveDamage();
+        rgb[1] = rgb[2] = 0; //sets red
+        SetColor(rgb[0],rgb[1],rgb[2]); 
     }
 
     void CheckHP()
     {
-        if (Attributes[0] <= 0)
+        if (_attributes[0] <= 0)
         {
-            Console.WriteLine("You");
             ((MyGame)game).LoadLevel("1");
         } 
-
     }
 
-    protected void RespawnMiddle()
+    void ReceiveDamage()
     {
-
+        Attributes[0]--;
     }
 
     protected void OnCollision(GameObject pOther)
     {
         if(pOther is Collectable c)
         {
-            this._attributes[1] += c.Mana;
+            Attributes[1] += c.Mana;
             c.Disappear();
         }
 
         if(pOther is Floor f)
         {
-            if(timeBoost < Time.time)
+            if(lastTimeBoosted < Time.time)
             {
                 switch(f.type)
                 {
@@ -197,6 +215,7 @@ public class Player:AnimationSprite
                         break;
                 }
                 timeBoost = Time.time + 1000;
+                lastTimeBoosted = timeBoost + 1000;
                 lastSpeed = animationSpeed;
             }
         }
@@ -205,8 +224,8 @@ public class Player:AnimationSprite
         {
             if(lastTimeHit < Time.time)
             {
-                Attributes[0]--;
-                lastTimeHit = Time.time + 1000;
+                SetInjured();
+                lastTimeHit = Time.time + 1500;
             }
         }
     }

@@ -55,14 +55,10 @@ public class Level: GameObject
         scroller.SetXY(game.width/2,game.height/2);
         AddChild(scroller);
         players = FindObjectsOfType<Player>();
-        int i = 0;
+
         foreach(Player player in players)
         {
-            if (i == 0)
-            {
-                //player.Attributes[1] = 100;
-                i++;
-            }
+            player.currentLvlVelocityX = speedForScroller;
             CreateHUD(player);
         }
     }
@@ -81,8 +77,15 @@ public class Level: GameObject
     }
 
     void Update()
-    { 
-        if(scroller != null) scrolling(scroller);
+    {
+        if (scroller != null)
+        {
+            scrolling(scroller);
+            for(int i = 0; i < players.Length; i++)
+            {
+                players[i].scrollerPositionX = scroller.x;
+            }
+        }
     }
 
     void CreateHUD(Player pTarget)
@@ -90,4 +93,5 @@ public class Level: GameObject
         if (pTarget == null) return;
         game.AddChild(new HUD(pTarget));
     }
+
 }

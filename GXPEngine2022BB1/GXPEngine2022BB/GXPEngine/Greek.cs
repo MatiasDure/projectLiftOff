@@ -16,7 +16,7 @@ public class Greek:Player
     protected override void Update()
     {
         Jumping(Key.W);
-        Ability(Key.SPACE);
+        Ability(Key.SPACE,50);
         base.Update();
     }
 }
