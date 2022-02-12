@@ -14,8 +14,14 @@ public class Egyptian : Player
     protected override void Update()
     {
         Jumping(Key.UP);
-        Ability(Key.K,20);
+        Ability(Key.K,5);
         base.Update();
+    }
+
+    protected override void Ability(int pKey, int pAmountManaCost)
+    {
+        if (!AbilitySet(pKey, pAmountManaCost) || Attributes[0] == 3) return;
+        Attributes[0]++; //get hp back
     }
 
 }

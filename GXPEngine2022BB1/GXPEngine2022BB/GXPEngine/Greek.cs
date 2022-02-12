@@ -16,7 +16,15 @@ public class Greek:Player
     protected override void Update()
     {
         Jumping(Key.W);
-        Ability(Key.SPACE,50);
+        Ability(Key.SPACE,1);
         base.Update();
+    }
+
+    protected override void Ability(int pKey, int pAmountManaCost)
+    {
+        if (!AbilitySet(pKey, pAmountManaCost) || isBoosting) return;      
+        isBoosting = true;
+        Console.WriteLine("boosting");
+        timeBoost = Time.time + 500;
     }
 }

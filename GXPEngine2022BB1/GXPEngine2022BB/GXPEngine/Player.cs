@@ -32,7 +32,7 @@ public class Player:AnimationSprite
     //player states
     bool isJumping;
     bool isFalling;
-    bool isBoosting;
+    protected bool isBoosting;
     bool isSlowing;
     bool isCollidingWall;
 
@@ -45,9 +45,9 @@ public class Player:AnimationSprite
     int lastTimeChangedAnimSpeed;
 
     //affect speed
-    int timeBoost;
+    protected int timeBoost;
     float lastSpeed;
-    int lastTimeBoosted;
+    protected int lastTimeBoosted;
 
     //mana
     int lastTimeManaIncreased = 0;
@@ -73,6 +73,7 @@ public class Player:AnimationSprite
         if(lastTimeCollided <= Time.time)
         {
             rgb[1] = rgb[2] = 255;
+            alpha = 1;
             SetColor(rgb[0],rgb[1],rgb[2]);
         }
         if (isCollidingWall) CollidedWall();
@@ -99,17 +100,21 @@ public class Player:AnimationSprite
         }
     }
 
-    virtual protected void Ability(int pKey, int pAmountManaCost)
+    protected bool AbilitySet(int pKey, int pAmountManaCost)
     {
-        if (Input.GetKey(pKey) && lastTimeManaUsed < Time.time && _attributes[1] > 4)
-        {
-            Attributes[1] -= pAmountManaCost;
-            lastTimeManaUsed = Time.time + 2000;
-        }
+        if (!Input.GetKey(pKey) || 
+            lastTimeManaUsed > Time.time ||
+            Attributes[1] < (pAmountManaCost - 1)) return false;
+
+        Attributes[1] -= pAmountManaCost;
+        lastTimeManaUsed = Time.time + 2000;
+        
+        return true;
     }
 
     protected void AnimSpeed()
     {
+        
         if (Time.time > lastTimeChangedAnimSpeed && !isBoosting && !isSlowing)
         {
             animationSpeed += 0.02f;
@@ -174,8 +179,9 @@ public class Player:AnimationSprite
 
     void SetInjured()
     {
-        lastTimeCollided = Time.time + 300;
+        lastTimeCollided = Time.time + 400;
         ReceiveDamage();
+        alpha = 0.5f;
         rgb[1] = rgb[2] = 0; //sets red
         SetColor(rgb[0],rgb[1],rgb[2]); 
     }
@@ -197,7 +203,20 @@ public class Player:AnimationSprite
     {
         if(pOther is Collectable c)
         {
-            Attributes[1] += c.Mana;
+            switch(c.Type)
+            {
+                case 0:
+                    Attributes[1] += c.Mana;
+                    break;
+                case 1:
+                    Console.WriteLine(c.Health);
+                    Attributes[0] += c.Health;
+                    break;
+                default:
+                    Console.WriteLine("type not found");
+                    break;
+            }
+            
             c.Disappear();
         }
 
@@ -229,4 +248,6 @@ public class Player:AnimationSprite
             }
         }
     }
+
+    virtual protected void Ability(int pKey, int pAmountManaCost) { }
 }

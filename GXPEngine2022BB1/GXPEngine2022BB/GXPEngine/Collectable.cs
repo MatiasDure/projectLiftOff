@@ -8,16 +8,29 @@ using TiledMapParser;
 
 public class Collectable:Sprite
 {
+
+    //collectable types
+    const int MANA = 0;
+    const int HEALTH = 1;
+
     //animation sprite
     string itemImgFile;
     int[] amountColsRows;
     AnimationSprite itemAnim;
 
+    //type of collectable health || mana
+    int _type;
+
+    public int Type { get => _type; private set => _type = value; }
+
+
+
     //item mana
     int _mana;
+    int _health;
 
     public int Mana { get => _mana; private set => _mana = value; }
-    
+    public int Health { get => _health; private set => _health = value; }
 
     public Collectable(TiledObject obj = null) : base("square.png")
     {
@@ -29,8 +42,12 @@ public class Collectable:Sprite
         if(obj != null)
         {
             itemImgFile = obj.GetStringProperty("fileName","square") + ".png";
-            amountColsRows = new int[] {obj.GetIntProperty("columns",0), obj.GetIntProperty("rows",0)};
-            Mana = obj.GetIntProperty("amountMana", 5);
+            amountColsRows = new int[] {obj.GetIntProperty("columns",1), obj.GetIntProperty("rows",1)};
+            Type = obj.GetIntProperty("type",0);
+
+            _ = Type == Mana ? Mana = obj.GetIntProperty("amountMana", 5) : Health = obj.GetIntProperty("amountHealth", 1); 
+            //if (type == MANA) Mana = obj.GetIntProperty("amountMana", 5);
+            //else Health = obj.GetIntProperty("amountHealth", 1);
             itemAnim = new AnimationSprite(itemImgFile,amountColsRows[0],amountColsRows[1],-1,false,false);
             itemAnim.SetOrigin(this.width/2,this.height/2);
             AddChild(itemAnim);
