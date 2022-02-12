@@ -46,8 +46,6 @@ public class Collectable:Sprite
             Type = obj.GetIntProperty("type",0);
 
             _ = Type == Mana ? Mana = obj.GetIntProperty("amountMana", 5) : Health = obj.GetIntProperty("amountHealth", 1); 
-            //if (type == MANA) Mana = obj.GetIntProperty("amountMana", 5);
-            //else Health = obj.GetIntProperty("amountHealth", 1);
             itemAnim = new AnimationSprite(itemImgFile,amountColsRows[0],amountColsRows[1],-1,false,false);
             itemAnim.SetOrigin(this.width/2,this.height/2);
             AddChild(itemAnim);

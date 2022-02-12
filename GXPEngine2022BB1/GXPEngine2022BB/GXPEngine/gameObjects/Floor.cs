@@ -8,14 +8,16 @@ using TiledMapParser;
 
 public class Floor:Sprite
 {
-    public string type;
+    string _type;
+
+    public string Type { get => _type; private set => _type = value; }
 
     public Floor(TiledObject obj = null) : base("snowPath.png")
     {
         collider.isTrigger = true;
         if(obj != null)
         {
-            type = obj.GetStringProperty("type","fast");
+            Type = obj.GetStringProperty("type","fast");
         }
     }
 }

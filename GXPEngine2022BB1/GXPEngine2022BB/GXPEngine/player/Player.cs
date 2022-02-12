@@ -224,7 +224,7 @@ public class Player:AnimationSprite
         {
             if(lastTimeBoosted < Time.time)
             {
-                switch(f.type)
+                switch(f.Type)
                 {
                     case "fast":
                         isBoosting = true;

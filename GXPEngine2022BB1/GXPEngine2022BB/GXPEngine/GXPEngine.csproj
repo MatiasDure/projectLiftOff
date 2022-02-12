@@ -40,10 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Collectable.cs" />
-    <Compile Include="Egyptian.cs" />
-    <Compile Include="Floor.cs" />
-    <Compile Include="Greek.cs" />
+    <Compile Include="gameObjects\Collectable.cs" />
+    <Compile Include="player\Egyptian.cs" />
+    <Compile Include="gameObjects\Floor.cs" />
+    <Compile Include="player\Greek.cs" />
     <Compile Include="GXPEngine\AddOns\Gizmos.cs" />
     <Compile Include="GXPEngine\AddOns\SpriteBatch.cs" />
     <Compile Include="GXPEngine\AddOns\TiledLoader.cs" />
@@ -89,9 +89,9 @@
     <Compile Include="GXPEngine\FMOD\FMODSoundSystem.cs" />
     <Compile Include="GXPEngine\SoLoud\Soloud.cs" />
     <Compile Include="GXPEngine\SoLoud\SoloudSoundSystem.cs" />
-    <Compile Include="Obstacle.cs" />
-    <Compile Include="Player.cs" />
-    <Compile Include="Portal.cs" />
+    <Compile Include="gameObjects\Obstacle.cs" />
+    <Compile Include="player\Player.cs" />
+    <Compile Include="gameObjects\Portal.cs" />
     <Compile Include="SelectChar.cs" />
     <Compile Include="Vec2.cs" />
   </ItemGroup>
