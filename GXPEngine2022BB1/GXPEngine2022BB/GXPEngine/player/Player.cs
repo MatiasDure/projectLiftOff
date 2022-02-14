@@ -17,6 +17,10 @@ public class Player:Sprite
     //animated character
     protected AnimationSprite playerImg;
 
+    //character's sounds
+    protected Sound[] charSounds;
+    Sound[] objectSounds;
+
     //game physics
     float jumpForce;
     float gravity;
@@ -73,6 +77,13 @@ public class Player:Sprite
         gravity = 0.35f;
         collider.isTrigger = true;
         animationSpeed = 0.2f;
+        objectSounds = new Sound[]
+        {
+            new Sound("sounds/fastFloor.wav"), //when colliding with fast floor 0
+            new Sound("sounds/slowFloor.wav"), //when colliding with slow floor 1
+            new Sound("sounds/manaGain.wav"), //when colliding with health object 2
+            new Sound("sounds/lifeGain.wav"), //when colliding with mana object 3
+        };
     }
 
     virtual protected void Update()
@@ -194,6 +205,7 @@ public class Player:Sprite
         ReceiveDamage();
         isInjured = true;
         lastTimeSlide = 0;
+        charSounds[1].Play(); //injured sound
     }
 
     void CheckHP()
@@ -222,10 +234,11 @@ public class Player:Sprite
             {
                 case 0:
                     Attributes[1] += c.Mana;
+                    objectSounds[2].Play();
                     break;
                 case 1:
-                    Console.WriteLine(c.Health);
                     Attributes[0] += c.Health;
+                    objectSounds[3].Play();
                     break;
                 default:
                     Console.WriteLine("type not found");
@@ -243,9 +256,11 @@ public class Player:Sprite
                 {
                     case "fast":
                         isBoosting = true;
+                        objectSounds[0].Play(); 
                         break;
                     case "slow":
                         isSlowing = true;
+                        objectSounds[1].Play();
                         break;
                 }
                 timeBoost = Time.time + 1000;
