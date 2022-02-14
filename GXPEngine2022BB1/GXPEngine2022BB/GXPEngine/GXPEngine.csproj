@@ -41,13 +41,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="gameObjects\Collectable.cs" />
+    <Compile Include="Parallax.cs" />
     <Compile Include="player\Egyptian.cs" />
     <Compile Include="gameObjects\Floor.cs" />
     <Compile Include="player\Greek.cs" />
     <Compile Include="GXPEngine\AddOns\Gizmos.cs" />
     <Compile Include="GXPEngine\AddOns\SpriteBatch.cs" />
     <Compile Include="GXPEngine\AddOns\TiledLoader.cs" />
-    <Compile Include="GXPEngine\Scroller.cs" />
+    <Compile Include="gameObjects\Scroller.cs" />
     <Compile Include="HUD.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Level.cs" />
@@ -92,8 +93,6 @@
     <Compile Include="gameObjects\Obstacle.cs" />
     <Compile Include="player\Player.cs" />
     <Compile Include="gameObjects\Portal.cs" />
-    <Compile Include="SelectChar.cs" />
-    <Compile Include="Vec2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

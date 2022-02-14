@@ -10,25 +10,17 @@ using TiledMapParser;
 // Used to travel between levels
 //------------------------------------------------------------------------//
 
-public class Portal : Sprite
+public class Portal : AnimationSprite
 {
     string target;
 
-    AnimationSprite gateAnimation;
-
-    public Portal(TiledObject obj = null) : base("square.png")
+    public Portal(TiledObject obj = null) : base("portal.png", 4, 1)
     {
         Initialize(obj);
     }
 
     void Initialize(TiledObject obj = null)
     {
-        alpha = 0;
-        SetOrigin(width / 2, height / 2);
-        gateAnimation = new AnimationSprite("portal.png", 4, 1, -1, false, false);
-        gateAnimation.SetOrigin(gateAnimation.width, gateAnimation.height / 2);
-        gateAnimation.scaleX = 2f;
-        AddChild(gateAnimation);
         collider.isTrigger = true;
         if (obj != null)
         {
@@ -38,7 +30,7 @@ public class Portal : Sprite
 
     void Update()
     {
-        gateAnimation.Animate(0.12f);
+        Animate(0.12f);
     }
     void OnCollision(GameObject other)
     {

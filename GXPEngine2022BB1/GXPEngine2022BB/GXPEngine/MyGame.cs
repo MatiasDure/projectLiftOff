@@ -3,36 +3,20 @@ using System.Collections.Generic;
 using GXPEngine;                                // GXPEngine contains the engine
 
 
-//--------questions--------
-// Is an endless runner possible without optimized collision checks? (spawn a little outside) (Concept is more platform oriented)
-// What to base speed and animation speed on? (currently is on Time.time, but that has its issues) (Make screen move instead of players)
-// How to make frgrd tiles scroll faster than bckgrd tiles, and bckgrd tiles faster than bckgrd img? (Parallex scrolling)
-// How to make screen scroll without a target? Explain why. (Take the average of players)
-// How to make 2 lanes for each player to have their own screen? (Maybe necessary if game is too boring on one screen)
-
-
 //-------What--to--work--on--------
-// HUD (one is disappearing after reload)
+// HUD (its not appearing) Maybe behind the sky
 // Find a more efficient way to make create the boost and slow down paths
-// Make screen scroll by itself
-// After making screen scroll by itself, make borders kill characters
-// Regen mana throughout time (max 100) (Done)
-// Add characters abilities
-// If characters abilities are too different, create a class for each one and inherit from player class
 // Create main screen where people can choose their characters
 // Create disappearing environtment name appear at the start of every environment
-// Add parallex scrolling
-// Create portal class to teleport between levels
 // Create SelectChar class to select characters in main screen
-// You can see whos player 1 and player 2 depending on ID
-
+// You can see whos player 1 and player 2 depending on ID in tiled
+// Make floors not be a trigger
 
 public class MyGame : Game
 {
-
 	string levelName = null;
 	string startName = "1"; 
-	public MyGame() : base(400, 480, false, false, 1366, 768)		
+	public MyGame() : base(854, 480, false, false, 1366, 768) 		
 	{
 		OnAfterStep += CheckLevel;
 		LoadLevel(startName);

@@ -7,9 +7,9 @@ using GXPEngine;
 using TiledMapParser;
 public class Egyptian : Player
 {
-    public Egyptian(TiledObject obj = null):base("greekChar.png",1,1)
+    public Egyptian(TiledObject obj = null):base("hitbox.jpg")
     {
-
+        playerImg = new AnimationSprite("greekCharSpritesheet.png", 5, 5);
     }
     protected override void Update()
     {

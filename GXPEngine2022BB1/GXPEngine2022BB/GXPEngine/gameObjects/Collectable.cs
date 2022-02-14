@@ -32,7 +32,7 @@ public class Collectable:Sprite
     public int Mana { get => _mana; private set => _mana = value; }
     public int Health { get => _health; private set => _health = value; }
 
-    public Collectable(TiledObject obj = null) : base("square.png")
+    public Collectable(TiledObject obj = null) : base("hitbox.jpg")
     {
         Initialize(obj);
     }
@@ -41,7 +41,7 @@ public class Collectable:Sprite
     {
         if(obj != null)
         {
-            itemImgFile = obj.GetStringProperty("fileName","square") + ".png";
+            itemImgFile = obj.GetStringProperty("fileName","hitbox") + ".jpg";
             amountColsRows = new int[] {obj.GetIntProperty("columns",1), obj.GetIntProperty("rows",1)};
             Type = obj.GetIntProperty("type",0);
 

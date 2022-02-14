@@ -6,10 +6,27 @@ using System.Threading.Tasks;
 using GXPEngine;
 using TiledMapParser;
 
-public class Obstacle:AnimationSprite
+public class Obstacle:Sprite
 {
-    public Obstacle(TiledObject obj = null):base("danger.png",1,1)
+    string type;
+    Sprite itemImg;
+
+    public Obstacle(TiledObject obj = null) : base("hitboxItems.jpg")
     {
         collider.isTrigger = true;
+        if (obj != null)
+        {
+            type = obj.GetStringProperty("type", "shield");
+        }
+
+        try
+        {
+            itemImg = new Sprite(type + ".png", false, false);
+            itemImg.SetOrigin(width / 2, height / 2);
+            AddChild(itemImg);
+            alpha = 0;
+        }
+        catch (Exception e) { Console.WriteLine(e.Message); }
+        
     }
 }

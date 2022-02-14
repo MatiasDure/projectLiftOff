@@ -11,13 +11,20 @@ public class Level: GameObject
     TiledLoader loader;
     Player[] players;
     string currentLevel;
-    Scroller scroller;
+    Scroller scrollerObject;
+    Parallax parallaxScroller;
+    SpriteBatch pillars;
+    SpriteBatch mount;
 
     public Level(string fileName)
     {
         loader = new TiledLoader(fileName);
         Map levelData = MapParser.ReadMap(fileName);
         currentLevel = fileName;
+        Console.WriteLine(currentLevel);
+        parallaxScroller = new Parallax();
+        pillars = new SpriteBatch();
+        mount = new SpriteBatch();
     }
 
     public void CreateLevel()
@@ -26,24 +33,39 @@ public class Level: GameObject
         loader.addColliders = false;
         loader.LoadImageLayers();
 
+        for (int i = 0; i < 2; i++)
+        {
+            if (i == 0) loader.rootObject = mount;
+            else loader.rootObject = pillars;
+            loader.LoadTileLayers(i);
+        }
+
+        mount.Freeze(); 
+        pillars.Freeze();
+        parallaxScroller.AddChild(mount); //adding sprite batch for parallax effect
+        AddChild(pillars); //adding sprite batch as child of level for normal scrolling
+
         loader.addColliders = true;
-        loader.rootObject = this;
-        loader.LoadTileLayers();
+        loader.LoadTileLayers(2);
         loader.autoInstance = true;
         loader.LoadObjectGroups();
 
-        switch(currentLevel)
+        loader.autoInstance = false;
+        loader.addColliders = false;
+        loader.LoadTileLayers(3);
+
+        switch (currentLevel)
         {
-            case "1":
+            case "projectLevel1.tmx":
                 speedForScroller = 2f;
                 break;
-            case "2":
+            case "projectLevel2.tmx":
                 speedForScroller = 4f;
                 break;
-            case "3":
+            case "projectLevel3.tmx":
                 speedForScroller = 6f;
                 break;
-            case "4":
+            case "projectLevel4.tmx":
                 speedForScroller = 8f;
                 break;
             default:
@@ -51,9 +73,11 @@ public class Level: GameObject
                 break;
         }
 
-        scroller = new Scroller(speedForScroller);
-        scroller.SetXY(game.width/2,game.height/2);
-        AddChild(scroller);
+        game.AddChild(parallaxScroller);
+        scrollerObject = new Scroller(speedForScroller);
+        scrollerObject.SetXY(game.width/2,game.height/2);
+        AddChild(scrollerObject);
+        parallaxScroller.scroller = scrollerObject;
         players = FindObjectsOfType<Player>();
 
         foreach(Player player in players)
@@ -78,12 +102,12 @@ public class Level: GameObject
 
     void Update()
     {
-        if (scroller != null)
+        if (scrollerObject != null)
         {
-            scrolling(scroller);
+            scrolling(scrollerObject);
             for(int i = 0; i < players.Length; i++)
             {
-                players[i].scrollerPositionX = scroller.x;
+                players[i].scrollerPositionX = scrollerObject.x;
             }
         }
     }
