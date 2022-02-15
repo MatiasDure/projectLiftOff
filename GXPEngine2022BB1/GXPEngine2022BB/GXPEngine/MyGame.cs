@@ -4,13 +4,14 @@ using GXPEngine;                                // GXPEngine contains the engine
 
 
 //-------What--to--work--on--------
-// HUD (its not appearing) Maybe behind the sky
+// HUD (its not appearing) Its behind sky
 // Find a more efficient way to make create the boost and slow down paths
 // Create main screen where people can choose their characters
 // Create disappearing environtment name appear at the start of every environment
 // Create SelectChar class to select characters in main screen
 // You can see whos player 1 and player 2 depending on ID in tiled
 // Make floors not be a trigger
+// change from getKey to getKeyDown
 
 public class MyGame : Game
 {
@@ -45,8 +46,8 @@ public class MyGame : Game
 		DestroyAll();
 		Level level = new Level(levelName);
         level.CreateLevel();
-        AddChild(level);	
-		levelName = null;
+        AddChild(level);  
+        levelName = null;
     }
 
 	void DestroyAll()

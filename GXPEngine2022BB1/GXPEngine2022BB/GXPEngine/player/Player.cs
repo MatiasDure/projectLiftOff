@@ -114,7 +114,7 @@ public class Player:Sprite
 
     protected void Sliding(int pKey)
     {
-        if(Input.GetKey(pKey) && !isSliding)
+        if(Input.GetKeyDown(pKey) && !isSliding)
         {
             isSliding = true;
             playerImg.rotation = 90;
@@ -143,7 +143,7 @@ public class Player:Sprite
 
     protected bool AbilitySet(int pKey, int pAmountManaCost)
     {
-        if (!Input.GetKey(pKey) || 
+        if (!Input.GetKeyDown(pKey) || 
             lastTimeManaUsed > Time.time ||
             Attributes[1] < (pAmountManaCost - 1)) return false;
 
@@ -174,16 +174,35 @@ public class Player:Sprite
             velocityY = 0;
         }
 
-        if (Input.GetKey(pToJump) && !isJumping && !isSliding)
+        if (Input.GetKeyDown(pToJump) && !isJumping && !isSliding)
         {
             velocityY += jumpForce;
             isJumping = true;
         }
     }
 
-    protected float SpeedTransitionManager(double pNum1, double pNum2)
+    virtual protected void AnimCycleSetter()
     {
-        return (float)Math.Min(pNum1, pNum2);
+        if (isInjured)
+        {
+            animationSpeed = 0.08f;
+            playerImg.SetCycle(12, 2); //injured animation
+            if (playerImg.currentFrame == 13)
+            {
+                isInjured = false;
+                animationSpeed = 0.2f;
+            }
+        }
+        else if (isSliding)
+        {
+            if (playerImg.currentFrame == 33) playerImg.SetCycle(33, 1);
+            else playerImg.SetCycle(30, 4); //sliding animation
+        }
+
+        else if (isFalling) playerImg.SetCycle(31, 1); //falling animation
+        else if (isJumping) playerImg.SetCycle(30, 1); //jumping animation        
+        else if (readyToUseItem) playerImg.SetCycle(20, 10); //Has ability at hand
+        else playerImg.SetCycle(0, 10); //normal running animation
     }
 
     protected void Edges()
@@ -280,5 +299,5 @@ public class Player:Sprite
     }
 
     virtual protected void Ability(int pKey, int pAmountManaCost) { }
-    virtual protected void AnimCycleSetter() { }
+    
 }

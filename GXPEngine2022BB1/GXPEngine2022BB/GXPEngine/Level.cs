@@ -21,7 +21,6 @@ public class Level: GameObject
         loader = new TiledLoader(fileName);
         Map levelData = MapParser.ReadMap(fileName);
         currentLevel = fileName;
-        Console.WriteLine(currentLevel);
         parallaxScroller = new Parallax();
         pillars = new SpriteBatch();
         mount = new SpriteBatch();
@@ -40,7 +39,7 @@ public class Level: GameObject
             loader.LoadTileLayers(i);
         }
 
-        mount.Freeze(); 
+        mount.Freeze();
         pillars.Freeze();
         parallaxScroller.AddChild(mount); //adding sprite batch for parallax effect
         AddChild(pillars); //adding sprite batch as child of level for normal scrolling

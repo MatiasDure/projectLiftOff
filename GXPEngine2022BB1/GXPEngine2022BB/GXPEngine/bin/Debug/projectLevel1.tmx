@@ -200,7 +200,7 @@
     <property name="type" type="int" value="1"/>
    </properties>
   </object>
-  <object id="51" name="char1" type="Greek" x="93.3333" y="396" width="39" height="64"/>
+  <object id="51" name="char1" type="Egyptian" x="93.3333" y="396" width="39" height="64"/>
  </objectgroup>
  <layer id="1" name="collision" width="325" height="30">
   <data encoding="csv">
