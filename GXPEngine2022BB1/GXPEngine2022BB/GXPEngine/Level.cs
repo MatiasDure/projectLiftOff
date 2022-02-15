@@ -26,7 +26,7 @@ public class Level: GameObject
         mount = new SpriteBatch();
     }
 
-    public void CreateLevel()
+    public HUD[] CreateLevel()
     {
         float speedForScroller;
         loader.addColliders = false;
@@ -73,17 +73,30 @@ public class Level: GameObject
         }
 
         game.AddChild(parallaxScroller);
+
+        //creating scroller object 
         scrollerObject = new Scroller(speedForScroller);
         scrollerObject.SetXY(game.width/2,game.height/2);
         AddChild(scrollerObject);
-        parallaxScroller.scroller = scrollerObject;
+
+        parallaxScroller.scroller = scrollerObject; //setting target to parallex scrolling
+
+
         players = FindObjectsOfType<Player>();
 
+        Spawner spawner = FindObjectOfType<Spawner>(); 
+        spawner.target = scrollerObject;
+
+        HUD[] huds = new HUD[2];
+        int j = 0;
         foreach(Player player in players)
         {
             player.currentLvlVelocityX = speedForScroller;
-            CreateHUD(player);
+            huds[j] = CreateHUD(player);
+            j++;
         }
+
+        return huds;
     }
 
     void scrolling(GameObject pTarget)
@@ -111,10 +124,10 @@ public class Level: GameObject
         }
     }
 
-    void CreateHUD(Player pTarget)
+    HUD CreateHUD(Player pTarget)
     {
-        if (pTarget == null) return;
-        game.AddChild(new HUD(pTarget));
+        if (pTarget == null) return null;
+        return new HUD(pTarget);
     }
 
 }

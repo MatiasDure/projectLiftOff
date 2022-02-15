@@ -16,7 +16,8 @@ using GXPEngine;                                // GXPEngine contains the engine
 public class MyGame : Game
 {
 	string levelName = null;
-	string startName = "1"; 
+	string startName = "1";
+    HUD[] huds;
 	public MyGame() : base(854, 480, false, false, 1366, 768) 		
 	{
 		OnAfterStep += CheckLevel;
@@ -45,8 +46,12 @@ public class MyGame : Game
 		if (levelName == null) return;
 		DestroyAll();
 		Level level = new Level(levelName);
-        level.CreateLevel();
-        AddChild(level);  
+        huds = level.CreateLevel();
+        AddChild(level); 
+        foreach (HUD h in huds)
+        {
+            if(h != null) AddChild(h);
+        }
         levelName = null;
     }
 
