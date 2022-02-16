@@ -26,7 +26,7 @@ public class MyGame : Game
 
 	void Update()
 	{
-		if(Input.GetKeyDown(Key.F)) LoadLevel(startName);
+		if (Input.GetKeyDown(Key.F)) LoadLevel(startName);
         if (Input.GetKeyDown(Key.D)) Console.WriteLine(currentFps);
 	}
 
@@ -47,10 +47,14 @@ public class MyGame : Game
 		DestroyAll();
 		Level level = new Level(levelName);
         huds = level.CreateLevel();
-        AddChild(level); 
-        foreach (HUD h in huds)
+        AddChild(level);
+
+        if (huds != null)
         {
-            if(h != null) AddChild(h);
+            foreach (HUD h in huds)
+            {
+                if (h != null) AddChild(h);
+            }
         }
         levelName = null;
     }

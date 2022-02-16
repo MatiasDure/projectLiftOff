@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using GXPEngine;
 using TiledMapParser;
 
-public class Level: GameObject
+public class Level : GameObject
 {
     TiledLoader loader;
     Player[] players;
@@ -16,6 +16,8 @@ public class Level: GameObject
     SpriteBatch pillars;
     SpriteBatch mount;
 
+    EasyDraw mainMenu;
+
     public Level(string fileName)
     {
         loader = new TiledLoader(fileName);
@@ -24,10 +26,20 @@ public class Level: GameObject
         parallaxScroller = new Parallax();
         pillars = new SpriteBatch();
         mount = new SpriteBatch();
+        mainMenu = new EasyDraw(400, 400, false);
+        mainMenu.SetXY(game.width / 2 - mainMenu.width / 2, game.height / 2 - mainMenu.height / 2);
+        AddChild(mainMenu);
     }
 
     public HUD[] CreateLevel()
     {
+        if (currentLevel == "projectLevel0.tmx")
+        {
+            loader.addColliders = false;
+            loader.LoadImageLayers();
+            return null;
+        }
+
         float speedForScroller;
         loader.addColliders = false;
         loader.LoadImageLayers();
@@ -76,7 +88,7 @@ public class Level: GameObject
 
         //creating scroller object 
         scrollerObject = new Scroller(speedForScroller);
-        scrollerObject.SetXY(game.width/2,game.height/2);
+        scrollerObject.SetXY(game.width / 2, game.height / 2);
         AddChild(scrollerObject);
 
         parallaxScroller.scroller = scrollerObject; //setting target to parallex scrolling
@@ -84,12 +96,12 @@ public class Level: GameObject
 
         players = FindObjectsOfType<Player>();
 
-        Spawner spawner = FindObjectOfType<Spawner>(); 
+        Spawner spawner = FindObjectOfType<Spawner>();
         spawner.target = scrollerObject;
 
         HUD[] huds = new HUD[2];
         int j = 0;
-        foreach(Player player in players)
+        foreach (Player player in players)
         {
             player.currentLvlVelocityX = speedForScroller;
             huds[j] = CreateHUD(player);
@@ -97,6 +109,7 @@ public class Level: GameObject
         }
 
         return huds;
+
     }
 
     void scrolling(GameObject pTarget)
@@ -112,12 +125,14 @@ public class Level: GameObject
         }
     }
 
+    float changingNum = 30;
+    int lastTimeChangeSize = 0;
     void Update()
     {
         if (scrollerObject != null)
         {
             scrolling(scrollerObject);
-            for(int i = 0; i < players.Length; i++)
+            for (int i = 0; i < players.Length; i++)
             {
                 players[i].scrollerPositionX = scrollerObject.x;
             }
@@ -129,5 +144,7 @@ public class Level: GameObject
         if (pTarget == null) return null;
         return new HUD(pTarget);
     }
+
+    bool turn;
 
 }

@@ -25,7 +25,7 @@ public class Greek:Player
     {
         CheckMana(30);
         Sliding(Key.Q);
-        Jumping(Key.I);
+        Jumping(Key.W);
         Ability(Key.E,30);
         base.Update();
     }
