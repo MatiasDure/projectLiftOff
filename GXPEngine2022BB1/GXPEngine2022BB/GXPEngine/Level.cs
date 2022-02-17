@@ -65,7 +65,7 @@ public class Level : GameObject
         loader.addColliders = false;
         loader.LoadTileLayers(3);
 
-        speedForScroller = currentLevel == "projectLevel1.tmx" ? 2f : 4f;
+        speedForScroller = currentLevel == "projectLevel1.tmx" ? 2f : 3f;
 
         game.AddChild(parallaxScroller);
 

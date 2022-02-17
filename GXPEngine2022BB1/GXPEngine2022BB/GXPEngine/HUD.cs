@@ -9,6 +9,7 @@ public class HUD:GameObject
 {
     Player player;
     AnimationSprite lives;
+    Sprite layout;
     //EasyDraw health;
     EasyDraw mana;
     int currentHp, framesToAnimate;

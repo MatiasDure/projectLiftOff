@@ -13,7 +13,7 @@ using GXPEngine;                                // GXPEngine contains the engine
 public class MyGame : Game
 {
 	string levelName = null;
-	string startName = "1";
+	string startName = "2";
 	int _loserNr;
 	string _loserName;
 

@@ -8,7 +8,7 @@ using GXPEngine;
 public class Bullet:Sprite
 {
     Sound bullet;
-    public Bullet(float pPosX, float pPosY) : base("hitboxItems.jpg")
+    public Bullet(float pPosX, float pPosY) : base("daggers.png")
     {
         SetXY(pPosX, pPosY);
         bullet = new Sound("ping.wav");
