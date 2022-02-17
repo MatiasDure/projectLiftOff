@@ -2,7 +2,6 @@ using System;                                   // System contains a lot of defa
 using System.Collections.Generic;
 using GXPEngine;                                // GXPEngine contains the engine
 
-
 //-------What--to--work--on--------
 // HUD (make it look nicer)
 // Find a more efficient way to make create the boost and slow down paths
@@ -13,7 +12,7 @@ using GXPEngine;                                // GXPEngine contains the engine
 public class MyGame : Game
 {
 	string levelName = null;
-	string startName = "2";
+	string startName = "0";
 	int _loserNr;
 	string _loserName;
 
@@ -23,8 +22,19 @@ public class MyGame : Game
 	public string LoserName { get => _loserName; private set => _loserName = value; }
 
 	HUD[] huds;
+
+	Sound[] soundTracks;
+	SoundChannel channel;
 	public MyGame() : base(854, 480, false, false, 1366, 768) 		
 	{
+		soundTracks = new Sound[]
+		{
+			new Sound("sounds/mainMenuSoundtrack.mp3", true, true),
+			new Sound("sounds/greekSoundtrack.mp3", true, true),
+			new Sound("sounds/egyptSoundtrack.mp3", true, true),
+			new Sound("sounds/player2Wins.wav"),
+			new Sound("sounds/player1Wins.wav")
+		};
 		OnAfterStep += CheckLevel;
 		LoadLevel(startName);
 	}
@@ -49,12 +59,14 @@ public class MyGame : Game
 	void CheckLevel()
     {
 		if (levelName == null) return;
+		if(channel != null) channel.Stop();
 		DestroyAll();
 		Level level = new Level(levelName);
-        huds = level.CreateLevel();
-        AddChild(level);
+		huds = level.CreateLevel();
+   
+		AddChild(level);
 
-        if (huds != null)
+		if (huds != null)
         {
             foreach (HUD h in huds)
             {
@@ -62,21 +74,34 @@ public class MyGame : Game
             }
         }
 
-		if (levelName == "projectLevel4.tmx")
-		{
-			Sound whoWon;
-			declareWinner = new EasyDraw(200, 200, false);
-			string playerWon;
+		int sound = -1;
+		switch (levelName)
+        {
+			case "projectLevel0.tmx":
+				sound = 0;
+				break;
+			case "projectLevel1.tmx":
+				sound = 1;
+				break;
+			case "projectLevel2.tmx":
+				sound = 2;
+				break;
+			case "projectLevel4.tmx":
+				declareWinner = new EasyDraw(200, 200, false);
+				string playerWon;
 
-			playerWon = LoserNr == 0 ? "greek" : "egypt";
-			whoWon = LoserNr == 0 ? new Sound("sounds/player2Wins.wav") : new Sound("sounds/player1Wins.wav");
-			whoWon.Play();
-			winnerImg = new Sprite(playerWon + ".png",false,false);
-			winnerImg.SetXY(width/2,height/2);
-			declareWinner.Text(playerWon);
-			AddChild(winnerImg);
-            try { AddChild(declareWinner); } catch (Exception e) { Console.WriteLine("this is the line that kills"); }
+				playerWon = LoserNr == 0 ? "egypt" : "greek";
+				_ = LoserNr == 0 ? soundTracks[3].Play() : soundTracks[4].Play();
+				winnerImg = new Sprite(playerWon + ".png", false, false);
+				winnerImg.SetXY(width / 2, height / 2);
+				declareWinner.Text(playerWon);
+				AddChild(winnerImg);
+				try { AddChild(declareWinner); } catch (Exception e) { Console.WriteLine("this is the line that kills"); }
+				
+				break;
 		}
+
+		if(sound != -1) channel = soundTracks[sound].Play();
 		levelName = null;
     }
 

@@ -8,20 +8,22 @@ using TiledMapParser;
 
 public class Obstacle:Sprite
 {
-    string type;
+    string _type;
     AnimationSprite itemImg;
+
+    public string Type { get => _type; private set => _type = value; }
 
     public Obstacle(TiledObject obj = null) : base("hitboxItems.jpg")
     {
         collider.isTrigger = true;
         if (obj != null)
         {
-            type = obj.GetStringProperty("type", "vase");
+            Type = obj.GetStringProperty("type", "vase");
         }
 
         try
         {
-            itemImg = new AnimationSprite("obstacles/"+type + ".png", 5, 2, -1, false, false);
+            itemImg = new AnimationSprite("obstacles/"+Type + ".png", 5, 2, -1, false, false);
             itemImg.SetOrigin(width / 2, height / 2);
             AddChild(itemImg);
             itemImg.SetCycle(0,7);

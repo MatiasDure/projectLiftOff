@@ -31,10 +31,18 @@ public class Level : GameObject
         AddChild(mainMenu);
     }
 
+    public void CreateLevel(int pLoser)
+    {
+        AnimationSprite winnerAnim;
+        winnerAnim = pLoser == 0 ? new AnimationSprite("egyptCharSpriteSheet.png", 5, 2) : new AnimationSprite("greekCharSpriteSheet.png", 5, 2);
+        winnerAnim.SetXY(game.width/2,game.height/2);
+        AddChild(winnerAnim);
+    }
+
     public HUD[] CreateLevel()
     {
         if (currentLevel == "projectLevel0.tmx" || currentLevel == "projectLevel4.tmx")
-        {
+        {            
             loader.addColliders = false;
             loader.LoadImageLayers();
             return null;
@@ -78,6 +86,10 @@ public class Level : GameObject
         parallaxScroller.scroller = scrollerObject; //setting target to parallex scrolling
 
         players = FindObjectsOfType<Player>();
+
+        Portal[] portals = FindObjectsOfType<Portal>();
+
+        foreach (Portal p in portals) p.targetObj = scrollerObject;
 
         Spawner spawner = FindObjectOfType<Spawner>();
         spawner.target = scrollerObject;

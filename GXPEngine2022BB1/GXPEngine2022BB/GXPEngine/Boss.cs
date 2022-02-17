@@ -10,8 +10,10 @@ public class Boss:AnimationSprite
     bool turn;
     bool shoot;
     bool hasShot;
+    Sound appear;
     public Boss(float pPosX, float pPosY):base("boss.png",5,6)
     {
+        appear = new Sound("sounds/bossAppear.wav");
         x = pPosX;
         y = pPosY;
         collider.isTrigger = true;
@@ -37,6 +39,7 @@ public class Boss:AnimationSprite
         {
             turn = true;   
             shoot = true;
+            appear.Play();
         }
         else if (y >= game.height - 150) turn = false;
     }
@@ -48,7 +51,7 @@ public class Boss:AnimationSprite
         {
             SetCycle(10, 17);
             if (currentFrame == 14 && !hasShot)
-            {
+            {               
                 game.AddChild(new Bullet(this.x - 28, this.y + height / 2 + 20));
                 hasShot = true;
             }

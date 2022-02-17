@@ -26,6 +26,7 @@ public class Player:Sprite
     //character's sounds
     protected Sound[] charSounds;
     Sound[] objectSounds;
+    bool collisionSoundPlayed;
 
     //game physics
     float jumpForce;
@@ -89,6 +90,9 @@ public class Player:Sprite
             new Sound("sounds/slowFloor.wav"), //when colliding with slow floor 1
             new Sound("sounds/manaGain.wav"), //when colliding with health object 2
             new Sound("sounds/lifeGain.wav"), //when colliding with mana object 3
+            new Sound("sounds/vaseBreak.wav"), //colliding with vase 4
+            new Sound("sounds/swordSpear.wav"), //colliding with swords 5
+            new Sound("sounds/woodPiece.wav") //colliding with wood 6
         };
     }
 
@@ -224,7 +228,6 @@ public class Player:Sprite
         SetInjured();
         x = scrollerPositionX;
         y = 0;
-
     }
 
     void SetInjured()
@@ -298,12 +301,39 @@ public class Player:Sprite
             }
         }
 
-        if(pOther is Obstacle)
+        if (pOther is Obstacle o)
         {
             _ = InjuredTimer();
-        }
 
-        if(pOther is Bullet b)
+            if (!collisionSoundPlayed)
+            {
+                switch (o.Type)
+                {
+                    case "vase":
+                        objectSounds[4].Play();
+                        break;
+                    case "knife":
+                        objectSounds[5].Play();
+                        break;
+                    case "sarc":
+                        objectSounds[5].Play();
+                        break;
+                    case "spear":
+                        objectSounds[5].Play();
+                        break;
+                    case "weapons":
+                        objectSounds[5].Play();
+                        break;
+                    case "wood":
+                        objectSounds[6].Play();
+                        break;
+                }
+                collisionSoundPlayed = true;
+            }
+        }
+        else collisionSoundPlayed = false;
+
+        if (pOther is Bullet b)
         {
             if (InjuredTimer())
             {

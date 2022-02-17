@@ -1,18 +1,14 @@
 ﻿using GXPEngine;
 using TiledMapParser;
 
-
-//------------------------Gate-----------------------------------//
-// Inherits from Sprite to use a white hitbox image
-// Contains an AnimationSprite to create the portal animation
-// Creates Gate objects
-// Contains a target variable which points to the next fileName which has to be loaded
-// Used to travel between levels
-//------------------------------------------------------------------------//
-
 public class Portal : AnimationSprite
 {
     string target;
+    public GameObject targetObj;
+    
+    //portal sound
+    bool soundPlaying;
+    Sound sound;
 
     public Portal(TiledObject obj = null) : base("spritesheets/portalSpritesheet.png", 5, 2)
     {
@@ -22,6 +18,7 @@ public class Portal : AnimationSprite
     void Initialize(TiledObject obj = null)
     {
         collider.isTrigger = true;
+        sound = new Sound("sounds/portal.mp3");
         if (obj != null)
         {
             target = obj.GetStringProperty("target", "1");
@@ -31,7 +28,18 @@ public class Portal : AnimationSprite
     void Update()
     {
         Animate(0.12f);
+        Sound();
     }
+
+    void Sound()
+    {
+        if(DistanceTo(targetObj) < 300 && !soundPlaying)
+        {
+            soundPlaying = true;
+            sound.Play();
+        }
+    }
+
     void OnCollision(GameObject other)
     {
         if (other is Player p)
