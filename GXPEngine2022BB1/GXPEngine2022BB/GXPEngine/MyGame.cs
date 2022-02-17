@@ -8,16 +8,14 @@ public class MyGame : Game
 	string levelName = null;
 	string startName = "0";
 	int _loserNr;
-	string _loserName;
 
 	public int LoserNr { get => _loserNr; set => _loserNr = value; }
-	public string LoserName { get => _loserName; private set => _loserName = value; }
 
 	HUD[] huds;
 
 	Sound[] soundTracks;
 	SoundChannel channel;
-	public MyGame() : base(854, 480, false, false, 1366, 768) 		
+	public MyGame() : base(854, 480, true, false, 1366, 768) 		
 	{
 		soundTracks = new Sound[]
 		{
