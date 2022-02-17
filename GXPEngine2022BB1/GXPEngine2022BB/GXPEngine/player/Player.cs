@@ -17,6 +17,12 @@ public class Player:Sprite
     //animated character
     protected AnimationSprite playerImg;
 
+    //for hud life
+    protected Sprite smallImg;
+
+    //for respawn cloud
+    protected EasyDraw respawnCloud;
+
     //character's sounds
     protected Sound[] charSounds;
     Sound[] objectSounds;
@@ -102,11 +108,13 @@ public class Player:Sprite
         if (isBoosting)
         {
             velocityX *= 1.5f;
+            animationSpeed = 0.375f;
             isBoosting = RestoreSpeed();
         }
         else if (isSlowing)
         {
             velocityX *= 0.5f;
+            animationSpeed = 0.1f;
             isSlowing = RestoreSpeed();
         }
         MoveUntilCollision(velocityX,0);
@@ -216,6 +224,7 @@ public class Player:Sprite
         SetInjured();
         x = scrollerPositionX;
         y = 0;
+
     }
 
     void SetInjured()
@@ -231,7 +240,8 @@ public class Player:Sprite
     {
         if (_attributes[0] <= 0)
         {
-            ((MyGame)game).LoadLevel("1");
+            ((MyGame)game).LoserNr = this.playerType;
+            ((MyGame)game).LoadLevel("4");
         } 
     }
 
@@ -253,11 +263,11 @@ public class Player:Sprite
             {
                 case 0:
                     Attributes[1] += c.Mana;
-                    objectSounds[2].Play();
+                    objectSounds[2].Play(); //mana sound
                     break;
                 case 1:
                     Attributes[0] += c.Health;
-                    objectSounds[3].Play();
+                    objectSounds[3].Play(); //health sound
                     break;
                 default:
                     Console.WriteLine("type not found");
@@ -275,7 +285,7 @@ public class Player:Sprite
                 {
                     case "fast":
                         isBoosting = true;
-                        objectSounds[0].Play(); 
+                        objectSounds[0].Play();
                         break;
                     case "slow":
                         isSlowing = true;
@@ -290,12 +300,27 @@ public class Player:Sprite
 
         if(pOther is Obstacle)
         {
-            if(lastTimeHit < Time.time)
+            _ = InjuredTimer();
+        }
+
+        if(pOther is Bullet b)
+        {
+            if (InjuredTimer())
             {
-                SetInjured();
-                lastTimeHit = Time.time + 1500;
+                b.Death();
             }
         }
+    }
+
+    bool InjuredTimer()
+    {
+        if (lastTimeHit < Time.time)
+        {
+            SetInjured();
+            lastTimeHit = Time.time + 1500;
+            return true;
+        }
+        return false;
     }
 
     virtual protected void Ability(int pKey, int pAmountManaCost) { }

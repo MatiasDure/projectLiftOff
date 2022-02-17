@@ -33,7 +33,7 @@ public class Level : GameObject
 
     public HUD[] CreateLevel()
     {
-        if (currentLevel == "projectLevel0.tmx")
+        if (currentLevel == "projectLevel0.tmx" || currentLevel == "projectLevel4.tmx")
         {
             loader.addColliders = false;
             loader.LoadImageLayers();
@@ -65,24 +65,7 @@ public class Level : GameObject
         loader.addColliders = false;
         loader.LoadTileLayers(3);
 
-        switch (currentLevel)
-        {
-            case "projectLevel1.tmx":
-                speedForScroller = 2f;
-                break;
-            case "projectLevel2.tmx":
-                speedForScroller = 4f;
-                break;
-            case "projectLevel3.tmx":
-                speedForScroller = 6f;
-                break;
-            case "projectLevel4.tmx":
-                speedForScroller = 8f;
-                break;
-            default:
-                speedForScroller = 2f;
-                break;
-        }
+        speedForScroller = currentLevel == "projectLevel1.tmx" ? 2f : 4f;
 
         game.AddChild(parallaxScroller);
 
@@ -92,7 +75,6 @@ public class Level : GameObject
         AddChild(scrollerObject);
 
         parallaxScroller.scroller = scrollerObject; //setting target to parallex scrolling
-
 
         players = FindObjectsOfType<Player>();
 
@@ -125,10 +107,9 @@ public class Level : GameObject
         }
     }
 
-    float changingNum = 30;
-    int lastTimeChangeSize = 0;
     void Update()
     {
+        
         if (scrollerObject != null)
         {
             scrolling(scrollerObject);
@@ -136,7 +117,19 @@ public class Level : GameObject
             {
                 players[i].scrollerPositionX = scrollerObject.x;
             }
+            if (Input.GetKeyDown(Key.H)) NextLevel(0);
+            return;
         }
+        switch(currentLevel)
+        {
+            case "projectLevel0.tmx":
+                if (Input.GetKeyDown(Key.H)) NextLevel(1);
+                break;
+            case "projectLevel4.tmx":
+                if (Input.GetKeyDown(Key.H)) NextLevel(0);
+                break;
+        }
+
     }
 
     HUD CreateHUD(Player pTarget)
@@ -146,5 +139,10 @@ public class Level : GameObject
     }
 
     bool turn;
+
+    void NextLevel(int pLevel)
+    {
+        ((MyGame)game).LoadLevel(""+pLevel);
+    }
 
 }

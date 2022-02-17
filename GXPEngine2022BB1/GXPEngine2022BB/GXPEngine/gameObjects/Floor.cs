@@ -14,6 +14,7 @@ public class Floor:Sprite
 
     public Floor(TiledObject obj = null) : base("snowPath.png")
     {
+        alpha = 0;
         collider.isTrigger = true;
         if(obj != null)
         {

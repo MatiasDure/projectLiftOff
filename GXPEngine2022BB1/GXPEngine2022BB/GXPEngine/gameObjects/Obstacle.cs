@@ -9,24 +9,30 @@ using TiledMapParser;
 public class Obstacle:Sprite
 {
     string type;
-    Sprite itemImg;
+    AnimationSprite itemImg;
 
     public Obstacle(TiledObject obj = null) : base("hitboxItems.jpg")
     {
         collider.isTrigger = true;
         if (obj != null)
         {
-            type = obj.GetStringProperty("type", "shield");
+            type = obj.GetStringProperty("type", "vase");
         }
 
         try
         {
-            itemImg = new Sprite(type + ".png", false, false);
+            itemImg = new AnimationSprite("obstacles/"+type + ".png", 5, 2, -1, false, false);
             itemImg.SetOrigin(width / 2, height / 2);
             AddChild(itemImg);
+            itemImg.SetCycle(0,7);
             alpha = 0;
         }
         catch (Exception e) { Console.WriteLine(e.Message); }
         
+    }
+
+    void Update()
+    {
+        itemImg.Animate(0.15f);
     }
 }

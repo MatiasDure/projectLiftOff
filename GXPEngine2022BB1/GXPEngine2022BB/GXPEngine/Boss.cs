@@ -8,16 +8,21 @@ using GXPEngine;
 public class Boss:AnimationSprite
 {
     bool turn;
-    public Boss(float pPosX, float pPosY):base("hitbox.jpg",1,1)
+    bool shoot;
+    bool hasShot;
+    public Boss(float pPosX, float pPosY):base("boss.png",5,6)
     {
         x = pPosX;
         y = pPosY;
+        collider.isTrigger = true;
     }
 
     void Update()
     {
         ControlPosition();
         Move();
+        Shoot();
+        Animate(0.2f);
     }
 
     void Move()
@@ -30,14 +35,30 @@ public class Boss:AnimationSprite
     {
         if (y <= 100)
         {
-            turn = true;
-            Shoot();
+            turn = true;   
+            shoot = true;
         }
         else if (y >= game.height - 150) turn = false;
     }
 
     void Shoot()
     {
-        game.AddChild(new Bullet(this.x,this.y));
+        
+        if(shoot)
+        {
+            SetCycle(10, 17);
+            if (currentFrame == 14 && !hasShot)
+            {
+                game.AddChild(new Bullet(this.x - 28, this.y + height / 2 + 20));
+                hasShot = true;
+            }
+            if (currentFrame == 26)
+            {
+                
+                shoot = hasShot = false;
+                SetCycle(0, 10);
+            }
+        }
+        
     }
 }

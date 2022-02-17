@@ -24,7 +24,7 @@ public class Egyptian : Player
         CheckMana(30);
         Sliding(Key.O);
         Jumping(Key.P);
-        Ability(Key.H, 30);
+        Ability(Key.I, 30);
         base.Update();
     }
 

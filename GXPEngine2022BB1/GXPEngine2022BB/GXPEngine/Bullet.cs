@@ -7,9 +7,13 @@ using GXPEngine;
 
 public class Bullet:Sprite
 {
-    public Bullet(float pPosX, float pPosY) : base("portal.png")
+    Sound bullet;
+    public Bullet(float pPosX, float pPosY) : base("hitboxItems.jpg")
     {
         SetXY(pPosX, pPosY);
+        bullet = new Sound("ping.wav");
+        bullet.Play();
+        collider.isTrigger = true;
     }
 
     void Update()
@@ -24,9 +28,8 @@ public class Bullet:Sprite
         y += 1.2f;
     }
     
-    void Death()
+    public void Death()
     {
-        Console.WriteLine("hey");
         this.LateDestroy();
     }
 }

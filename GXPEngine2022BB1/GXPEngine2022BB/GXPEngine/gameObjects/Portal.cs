@@ -14,7 +14,7 @@ public class Portal : AnimationSprite
 {
     string target;
 
-    public Portal(TiledObject obj = null) : base("portal.png", 4, 1)
+    public Portal(TiledObject obj = null) : base("spritesheets/portalSpritesheet.png", 5, 2)
     {
         Initialize(obj);
     }
