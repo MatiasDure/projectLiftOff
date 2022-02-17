@@ -39,6 +39,12 @@ public class HUD:GameObject
     void Health()
     {
         if (framesToAnimate > 12) framesToAnimate = 0;
+        if(currentHp < player.Attributes[0])
+        {
+            lives.SetFrame(lives.currentFrame - 4);
+            framesToAnimate -= 4;
+            currentHp = player.Attributes[0];
+        }
         if (currentHp > player.Attributes[0])
         {
             currentHp = player.Attributes[0];

@@ -9,8 +9,9 @@ using TiledMapParser;
 public class Spawner:Sprite
 {
     public GameObject target;
-    public Spawner(TiledObject obj = null) : base("portal.png")
+    public Spawner(TiledObject obj = null) : base("hitboxItems.jpg",false,false)
     {
+        alpha = 0;
     }
 
     void Update()

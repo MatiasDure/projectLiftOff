@@ -25,8 +25,8 @@ public class Player:Sprite
 
     //character's sounds
     protected Sound[] charSounds;
-    Sound[] objectSounds;
-    bool collisionSoundPlayed;
+    protected Sound[] objectSounds;
+    protected bool collisionSoundPlayed;
 
     //game physics
     float jumpForce;
@@ -75,6 +75,9 @@ public class Player:Sprite
     //health
     int lastTimeHit = 0;
 
+    //sound player
+    int lastTimePlayedSound = 0;
+
     public Player(string pFileName,TiledObject obj = null):base(pFileName)
     {
         playerType = TypePlayer; //Determine which player each instance is, so we can manipulate them individually
@@ -106,6 +109,7 @@ public class Player:Sprite
         AnimCycleSetter();
         playerImg.Animate(animationSpeed);
     }
+
     protected void HorizontalMovement()
     {
         velocityX = currentLvlVelocityX;
@@ -258,18 +262,18 @@ public class Player:Sprite
         Attributes[0]--;
     }
 
-    protected void OnCollision(GameObject pOther)
+    virtual protected void OnCollision(GameObject pOther)
     {
         if(pOther is Collectable c)
         {
             switch(c.Type)
             {
                 case 0:
-                    Attributes[1] += c.Mana;
+                    if(!(Attributes[1] >= 100))Attributes[1] += c.Mana;
                     objectSounds[2].Play(); //mana sound
                     break;
                 case 1:
-                    Attributes[0] += c.Health;
+                    if (!(Attributes[0] >= 3)) Attributes[0] += c.Health;
                     objectSounds[3].Play(); //health sound
                     break;
                 default:
@@ -305,7 +309,7 @@ public class Player:Sprite
         {
             _ = InjuredTimer();
 
-            if (!collisionSoundPlayed)
+            if (lastTimePlayedSound < Time.time)
             {
                 switch (o.Type)
                 {
@@ -328,10 +332,9 @@ public class Player:Sprite
                         objectSounds[6].Play();
                         break;
                 }
-                collisionSoundPlayed = true;
+                lastTimePlayedSound = Time.time + 1000;
             }
         }
-        else collisionSoundPlayed = false;
 
         if (pOther is Bullet b)
         {
@@ -342,7 +345,7 @@ public class Player:Sprite
         }
     }
 
-    bool InjuredTimer()
+    protected bool InjuredTimer()
     {
         if (lastTimeHit < Time.time)
         {

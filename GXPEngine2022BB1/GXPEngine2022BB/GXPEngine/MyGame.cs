@@ -16,8 +16,6 @@ public class MyGame : Game
 	int _loserNr;
 	string _loserName;
 
-	EasyDraw declareWinner;
-	Sprite winnerImg;
 	public int LoserNr { get => _loserNr; set => _loserNr = value; }
 	public string LoserName { get => _loserName; private set => _loserName = value; }
 
