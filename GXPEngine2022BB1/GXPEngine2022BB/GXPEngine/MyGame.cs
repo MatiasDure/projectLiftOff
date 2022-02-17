@@ -2,12 +2,6 @@ using System;                                   // System contains a lot of defa
 using System.Collections.Generic;
 using GXPEngine;                                // GXPEngine contains the engine
 
-//-------What--to--work--on--------
-// HUD (make it look nicer)
-// Find a more efficient way to make create the boost and slow down paths
-// Create main screen where people can choose their characters
-// Create disappearing environtment name appear at the start of every environment
-// You can see whos player 1 and player 2 depending on ID in tiled
 
 public class MyGame : Game
 {

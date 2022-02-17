@@ -97,6 +97,7 @@ public class Player:Sprite
             new Sound("sounds/swordSpear.wav"), //colliding with swords 5
             new Sound("sounds/woodPiece.wav") //colliding with wood 6
         };
+        alpha = 0;
     }
 
     virtual protected void Update()
