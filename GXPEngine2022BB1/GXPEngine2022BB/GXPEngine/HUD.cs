@@ -17,16 +17,18 @@ public class HUD:GameObject
     {
         player = pPlayer;
         currentHp = pPlayer.Attributes[0];
-        //health = new EasyDraw(50, 10, false);
-        mana = new EasyDraw(50, 10, false);
-        mana.SetXY(player.playerType > 0 ? game.width - 70 : 20, 40);
-        //health.SetXY(player.playerType > 0 ? game.width - 70 : 20, 0);
-        //AddChild(health);   
+        mana = new EasyDraw(105, 10, false);
+        mana.SetXY(player.playerType > 0 ? game.width - 158 : 55, 13);   
         AddChild(mana);
         lives = new AnimationSprite("heartsAnimation.png",1,13);
-        lives.SetXY(player.playerType > 0 ? game.width - 70 : 20, 20);
+        lives.SetXY(player.playerType > 0 ? game.width - 100 : 50, 40);
         lives.SetScaleXY(0.15f,0.15f);
         AddChild(lives);
+        if (player.playerType > 0)
+        {
+            layout = new Sprite("hud.png", false, false);
+            AddChild(layout);
+        }
     }
 
     void Update()
@@ -47,14 +49,11 @@ public class HUD:GameObject
         {
             lives.Animate(0.12f);
         }
-        //health.Clear(255, 0, 0);
-        //health.Fill(0, 255, 0);
-        //health.Rect(0, 0, player.Attributes[0] * 33, 20);
     }
 
     void Mana()
     {
-        mana.Clear(255, 0, 0);
+        mana.Clear(0, 0, 0, 100);
         mana.Fill(0, 0, 255);
         mana.Rect(0, 0, player.Attributes[1], 20);
     }
