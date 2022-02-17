@@ -96,7 +96,7 @@ public class Player:Sprite
     {
         Edges();
         CheckHP();
-        if (isCollidingWall) CollidedWall();
+        if (isCollidingWall || y > game.height - this.height/2) CollidedWall();
         else HorizontalMovement();
         IncreaseMana();
         AnimCycleSetter();

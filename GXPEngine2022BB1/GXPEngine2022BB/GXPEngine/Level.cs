@@ -56,14 +56,15 @@ public class Level : GameObject
         parallaxScroller.AddChild(mount); //adding sprite batch for parallax effect
         AddChild(pillars); //adding sprite batch as child of level for normal scrolling
 
+        loader.addColliders = false;
+        loader.LoadTileLayers(3); //no collision tiles
+
         loader.addColliders = true;
-        loader.LoadTileLayers(2);
+        loader.LoadTileLayers(2); //collision tiles
         loader.autoInstance = true;
         loader.LoadObjectGroups();
 
-        loader.autoInstance = false;
-        loader.addColliders = false;
-        loader.LoadTileLayers(3);
+        
 
         speedForScroller = currentLevel == "projectLevel1.tmx" ? 2f : 3f;
 
