@@ -16,6 +16,7 @@ public class Level : GameObject
     SpriteBatch pillars;
     SpriteBatch mount;
     AnimationSprite anim;
+    Sprite winnerScreen;
 
     public Level(string fileName)
     {
@@ -30,8 +31,7 @@ public class Level : GameObject
     public HUD[] CreateLevel()
     {
         if (currentLevel == "projectLevel0.tmx" || currentLevel == "projectLevel4.tmx")
-        {
-            
+        {           
             loader.addColliders = false;
             loader.LoadImageLayers();
             if(currentLevel == "projectLevel0.tmx")
@@ -41,7 +41,16 @@ public class Level : GameObject
             }
             else
             {
-                anim = new AnimationSprite("menuScreenAnim.png", 2, 1, -1, false, false);
+                string animName = null;
+                if (((MyGame)game).LoserNr == 0) animName = "egypt";
+                else animName = "greek";
+                if (animName != null)
+                {
+                    anim = new AnimationSprite(animName + "WinnerAnim.png", 2, 1, -1, false, false);
+                    anim.SetXY(game.width / 2 - 50, game.height / 2 - 30);
+                    winnerScreen = new Sprite(animName+"WinnerScreen.png",false,false);
+                }                
+                AddChild(winnerScreen);
             }
             AddChild(anim);
             return null;
@@ -139,6 +148,7 @@ public class Level : GameObject
                 if (Input.GetKeyDown(Key.H)) NextLevel(1);
                 break;
             case "projectLevel4.tmx":
+                anim.Animate(0.06f);
                 if (Input.GetKeyDown(Key.H)) NextLevel(0);
                 break;
         }
@@ -150,8 +160,6 @@ public class Level : GameObject
         if (pTarget == null) return null;
         return new HUD(pTarget);
     }
-
-    bool turn;
 
     void NextLevel(int pLevel)
     {

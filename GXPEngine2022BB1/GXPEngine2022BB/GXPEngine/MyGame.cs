@@ -33,7 +33,8 @@ public class MyGame : Game
 			new Sound("sounds/greekSoundtrack.mp3", true, true),
 			new Sound("sounds/egyptSoundtrack.mp3", true, true),
 			new Sound("sounds/player2Wins.wav"),
-			new Sound("sounds/player1Wins.wav")
+			new Sound("sounds/player1Wins.wav"),
+			new Sound("sounds/victorySound.mp3", true, true)
 		};
 		OnAfterStep += CheckLevel;
 		LoadLevel(startName);
@@ -87,17 +88,8 @@ public class MyGame : Game
 				sound = 2;
 				break;
 			case "projectLevel4.tmx":
-				declareWinner = new EasyDraw(200, 200, false);
-				string playerWon;
-
-				playerWon = LoserNr == 0 ? "egypt" : "greek";
 				_ = LoserNr == 0 ? soundTracks[3].Play() : soundTracks[4].Play();
-				winnerImg = new Sprite(playerWon + ".png", false, false);
-				winnerImg.SetXY(width / 2, height / 2);
-				declareWinner.Text(playerWon);
-				AddChild(winnerImg);
-				try { AddChild(declareWinner); } catch (Exception e) { Console.WriteLine("this is the line that kills"); }
-				
+				sound = 5;
 				break;
 		}
 
