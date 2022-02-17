@@ -15,8 +15,7 @@ public class Level : GameObject
     Parallax parallaxScroller;
     SpriteBatch pillars;
     SpriteBatch mount;
-
-    EasyDraw mainMenu;
+    AnimationSprite anim;
 
     public Level(string fileName)
     {
@@ -26,25 +25,25 @@ public class Level : GameObject
         parallaxScroller = new Parallax();
         pillars = new SpriteBatch();
         mount = new SpriteBatch();
-        mainMenu = new EasyDraw(400, 400, false);
-        mainMenu.SetXY(game.width / 2 - mainMenu.width / 2, game.height / 2 - mainMenu.height / 2);
-        AddChild(mainMenu);
-    }
-
-    public void CreateLevel(int pLoser)
-    {
-        AnimationSprite winnerAnim;
-        winnerAnim = pLoser == 0 ? new AnimationSprite("egyptCharSpriteSheet.png", 5, 2) : new AnimationSprite("greekCharSpriteSheet.png", 5, 2);
-        winnerAnim.SetXY(game.width/2,game.height/2);
-        AddChild(winnerAnim);
     }
 
     public HUD[] CreateLevel()
     {
         if (currentLevel == "projectLevel0.tmx" || currentLevel == "projectLevel4.tmx")
-        {            
+        {
+            
             loader.addColliders = false;
             loader.LoadImageLayers();
+            if(currentLevel == "projectLevel0.tmx")
+            {
+                anim = new AnimationSprite("menuScreenAnim.png",2,1,-1,false,false);
+                anim.SetXY(game.width/2 - 160,game.height - 120);
+            }
+            else
+            {
+                anim = new AnimationSprite("menuScreenAnim.png", 2, 1, -1, false, false);
+            }
+            AddChild(anim);
             return null;
         }
 
@@ -136,6 +135,7 @@ public class Level : GameObject
         switch(currentLevel)
         {
             case "projectLevel0.tmx":
+                anim.Animate(0.06f);
                 if (Input.GetKeyDown(Key.H)) NextLevel(1);
                 break;
             case "projectLevel4.tmx":
