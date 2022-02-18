@@ -15,7 +15,7 @@ public class MyGame : Game
 
 	Sound[] soundTracks;
 	SoundChannel channel;
-	public MyGame() : base(854, 480, true, false, 1366, 768) 		
+	public MyGame() : base(854, 480, false, false, 1366, 768) 		
 	{
 		soundTracks = new Sound[]
 		{

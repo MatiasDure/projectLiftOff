@@ -10,13 +10,22 @@ public class Boss:AnimationSprite
     bool turn;
     bool shoot;
     bool hasShot;
-    Sound appear;
+    bool disappearAnimGone;
+    Sound[] appearDis;
+    AnimationSprite disappear;
+    int lifeTime;
+
+
     public Boss(float pPosX, float pPosY):base("boss.png",5,6)
     {
-        appear = new Sound("sounds/bossAppear.wav");
+        appearDis = new Sound[] { new Sound("sounds/bossAppear.wav"), new Sound("sounds/bossDisappear.wav") };
         x = pPosX;
         y = pPosY;
         collider.isTrigger = true;
+        lifeTime = Time.time + 15000;
+        disappear = new AnimationSprite("disappearParticle.png", 4, 2, -1, false, false);
+        AddChild(disappear);
+        disappear.alpha = 0;
     }
 
     void Update()
@@ -25,6 +34,7 @@ public class Boss:AnimationSprite
         Move();
         Shoot();
         Animate(0.2f);
+        if(Time.time > lifeTime) Death();
     }
 
     void Move()
@@ -39,7 +49,7 @@ public class Boss:AnimationSprite
         {
             turn = true;   
             shoot = true;
-            appear.Play();
+            appearDis[0].Play();
         }
         else if (y >= game.height - 150) turn = false;
     }
@@ -63,5 +73,18 @@ public class Boss:AnimationSprite
             }
         }
         
+    }
+
+    void Death()
+    {
+        if (!disappearAnimGone)
+        {
+            appearDis[1].Play();
+            disappear.alpha = 1;
+            this.alpha = 0;
+            disappearAnimGone = true;
+        }
+        disappear.Animate(0.15f);
+        if(disappear.currentFrame == 7) this.Destroy(); 
     }
 }

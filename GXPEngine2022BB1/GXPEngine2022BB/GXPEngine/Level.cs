@@ -99,8 +99,11 @@ public class Level : GameObject
 
         foreach (Portal p in portals) p.targetObj = scrollerObject;
 
-        Spawner spawner = FindObjectOfType<Spawner>();
-        spawner.target = scrollerObject;
+        if (currentLevel == "projectLevel2.tmx")
+        {
+            Spawner spawner = FindObjectOfType<Spawner>();
+            spawner.target = scrollerObject;
+        }
 
         HUD[] huds = new HUD[2];
         int j = 0;
