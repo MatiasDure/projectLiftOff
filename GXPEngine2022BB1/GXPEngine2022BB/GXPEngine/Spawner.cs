@@ -16,7 +16,7 @@ public class Spawner:Sprite
 
     void Update()
     {
-        if(DistanceTo(target) < 200) CreateBoss();   
+        if(DistanceTo(target) < 100) CreateBoss();   
     }
 
     void CreateBoss()
