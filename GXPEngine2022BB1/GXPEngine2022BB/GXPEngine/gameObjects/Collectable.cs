@@ -11,7 +11,6 @@ public class Collectable:Sprite
 
     //collectable types
     const int MANA = 0;
-    const int HEALTH = 1;
 
     AnimationSprite itemAnim;
 

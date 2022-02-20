@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.1" orientation="orthogonal" renderorder="right-down" width="325" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="257">
+<map version="1.8" tiledversion="1.8.1" orientation="orthogonal" renderorder="right-down" width="325" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="259">
  <tileset firstgid="1" name="Pillars (Foreground)" tilewidth="16" tileheight="16" tilecount="1590" columns="53">
   <image source="Pillars (Foreground).png" width="854" height="480"/>
  </tileset>
@@ -125,11 +125,6 @@
     <property name="type" value="fast"/>
    </properties>
   </object>
-  <object id="17" name="fast" type="Floor" x="2866.51" y="358.485" width="60" height="10">
-   <properties>
-    <property name="type" value="fast"/>
-   </properties>
-  </object>
   <object id="18" name="slow" type="Floor" x="1485.28" y="356.212" width="60" height="10">
    <properties>
     <property name="type" value="slow"/>
@@ -143,11 +138,6 @@
   <object id="20" name="slow" type="Floor" x="4291.33" y="117.212" width="68.6667" height="11.3333">
    <properties>
     <property name="type" value="slow"/>
-   </properties>
-  </object>
-  <object id="21" name="fast" type="Floor" x="3250.26" y="404.5" width="60" height="10">
-   <properties>
-    <property name="type" value="fast"/>
    </properties>
   </object>
   <object id="22" name="slow" type="Floor" x="3361.19" y="168.091" width="77.6667" height="10">
@@ -190,7 +180,7 @@
     <property name="type" value="vase"/>
    </properties>
   </object>
-  <object id="30" name="danger" type="Obstacle" x="4715.85" y="427.303" width="30" height="30">
+  <object id="30" name="danger" type="Obstacle" x="4723.85" y="437.303" width="25" height="25">
    <properties>
     <property name="type" value="weapons"/>
    </properties>
@@ -236,7 +226,7 @@
     <property name="type" value="knife"/>
    </properties>
   </object>
-  <object id="43" name="danger" type="Obstacle" x="3871.72" y="288.273" width="30" height="30">
+  <object id="43" name="danger" type="Obstacle" x="3870.72" y="275.273" width="30" height="30">
    <properties>
     <property name="type" value="knife"/>
    </properties>
@@ -261,28 +251,24 @@
   <object id="117" name="Heart" type="Collectable" x="1973.82" y="104.545" width="21" height="20">
    <properties>
     <property name="amountHealth" type="int" value="1"/>
-    <property name="fileName" value="heart"/>
     <property name="type" type="int" value="1"/>
    </properties>
   </object>
   <object id="118" name="Heart" type="Collectable" x="2597.75" y="72.25" width="21" height="20">
    <properties>
     <property name="amountHealth" type="int" value="1"/>
-    <property name="fileName" value="heart"/>
     <property name="type" type="int" value="1"/>
    </properties>
   </object>
   <object id="119" name="Heart" type="Collectable" x="3173.5" y="168.25" width="21" height="20">
    <properties>
     <property name="amountHealth" type="int" value="1"/>
-    <property name="fileName" value="heart"/>
     <property name="type" type="int" value="1"/>
    </properties>
   </object>
   <object id="120" name="Heart" type="Collectable" x="4646" y="104.25" width="21" height="20">
    <properties>
     <property name="amountHealth" type="int" value="1"/>
-    <property name="fileName" value="heart"/>
     <property name="type" type="int" value="1"/>
    </properties>
   </object>
@@ -294,14 +280,12 @@
   <object id="128" name="GreekMana" type="Collectable" x="614.167" y="177.334" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="140" name="GreekMana" type="Collectable" x="1565.17" y="95" width="33" height="26">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="GreekMana"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
@@ -313,56 +297,48 @@
   <object id="190" name="GreekMana" type="Collectable" x="649" y="177.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="191" name="GreekMana" type="Collectable" x="682.5" y="176.833" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="192" name="GreekMana" type="Collectable" x="704.5" y="404.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="193" name="GreekMana" type="Collectable" x="780.5" y="403.833" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="195" name="GreekMana" type="Collectable" x="996" y="146.833" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="196" name="GreekMana" type="Collectable" x="1033" y="147.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="197" name="GreekMana" type="Collectable" x="1069.5" y="146.833" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="198" name="GreekMana" type="Collectable" x="1472" y="336.833" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
@@ -376,49 +352,42 @@
   <object id="200" name="GreekMana" type="Collectable" x="1541.5" y="337.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="204" name="GreekMana" type="Collectable" x="1600.83" y="95.3333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="205" name="GreekMana" type="Collectable" x="1750" y="338.833" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="206" name="GreekMana" type="Collectable" x="1784" y="338.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="207" name="GreekMana" type="Collectable" x="1817.5" y="338.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="208" name="GreekMana" type="Collectable" x="1918" y="257.833" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="209" name="GreekMana" type="Collectable" x="1951" y="257.833" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
@@ -432,224 +401,180 @@
   <object id="211" name="GreekMana" type="Collectable" x="2425" y="305.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="212" name="GreekMana" type="Collectable" x="2358.5" y="305.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="213" name="GreekMana" type="Collectable" x="2391" y="64.3333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="214" name="GreekMana" type="Collectable" x="2425" y="64.3333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="215" name="GreekMana" type="Collectable" x="2459.5" y="64.3333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="216" name="GreekMana" type="Collectable" x="2542.5" y="370.833" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="217" name="GreekMana" type="Collectable" x="2576" y="370.833" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="218" name="GreekMana" type="Collectable" x="2824" y="192.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="220" name="GreekMana" type="Collectable" x="2911" y="162.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="221" name="GreekMana" type="Collectable" x="2991" y="159.833" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="222" name="GreekMana" type="Collectable" x="3070.5" y="156.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="223" name="GreekMana" type="Collectable" x="3020" y="432.833" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="224" name="GreekMana" type="Collectable" x="3054" y="432.833" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="225" name="GreekMana" type="Collectable" x="3088.5" y="432.833" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="226" name="GreekMana" type="Collectable" x="3312" y="273.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
-    <property name="type" type="int" value="0"/>
-   </properties>
-  </object>
-  <object id="227" name="GreekMana" type="Collectable" x="3386.5" y="388.333" width="33" height="25.3333">
-   <properties>
-    <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
-    <property name="type" type="int" value="0"/>
-   </properties>
-  </object>
-  <object id="228" name="GreekMana" type="Collectable" x="3353.5" y="388.333" width="33" height="25.3333">
-   <properties>
-    <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="229" name="GreekMana" type="Collectable" x="3489" y="436.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="230" name="GreekMana" type="Collectable" x="3521.5" y="436.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="231" name="GreekMana" type="Collectable" x="3555.5" y="436.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="232" name="GreekMana" type="Collectable" x="3488" y="99.8333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="233" name="GreekMana" type="Collectable" x="3567.5" y="163.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="234" name="GreekMana" type="Collectable" x="3601.5" y="163.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="235" name="GreekMana" type="Collectable" x="3703" y="306.833" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="236" name="GreekMana" type="Collectable" x="3825" y="51.8333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="237" name="GreekMana" type="Collectable" x="3990" y="402.833" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="238" name="GreekMana" type="Collectable" x="4011" y="226.833" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="239" name="GreekMana" type="Collectable" x="4051" y="227.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="240" name="GreekMana" type="Collectable" x="4291.5" y="194.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="241" name="GreekMana" type="Collectable" x="4326" y="194.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="242" name="GreekMana" type="Collectable" x="4355.5" y="99.3333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="243" name="GreekMana" type="Collectable" x="4268" y="99.8333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
@@ -663,65 +588,55 @@
   <object id="245" name="GreekMana" type="Collectable" x="4338.5" y="340.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="246" name="GreekMana" type="Collectable" x="4378" y="340.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="247" name="GreekMana" type="Collectable" x="4448" y="260.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="248" name="GreekMana" type="Collectable" x="4561.5" y="257.833" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="249" name="GreekMana" type="Collectable" x="4832" y="370.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="250" name="GreekMana" type="Collectable" x="4880" y="370.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="251" name="GreekMana" type="Collectable" x="4927" y="370.333" width="33" height="25.3333">
    <properties>
     <property name="amountMana" type="int" value="5"/>
-    <property name="fileName" value="ManaGreek"/>
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="252" name="char1" type="Greek" x="121" y="399" width="39" height="64"/>
-  <object id="253" name="char1" type="Egyptian" x="172.5" y="399.5" width="39" height="64"/>
   <object id="254" name="Heart" type="Collectable" x="900.5" y="360" width="21" height="20">
    <properties>
     <property name="amountHealth" type="int" value="1"/>
-    <property name="fileName" value="heart"/>
     <property name="type" type="int" value="1"/>
    </properties>
   </object>
   <object id="255" name="Heart" type="Collectable" x="1048.5" y="88" width="21" height="20">
    <properties>
     <property name="amountHealth" type="int" value="1"/>
-    <property name="fileName" value="heart"/>
     <property name="type" type="int" value="1"/>
    </properties>
   </object>
@@ -730,6 +645,16 @@
     <property name="amountHealth" type="int" value="1"/>
     <property name="fileName" value="heart"/>
     <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="257" name="fast" type="Floor" x="3240" y="404" width="60" height="10">
+   <properties>
+    <property name="type" value="fast"/>
+   </properties>
+  </object>
+  <object id="258" name="fast" type="Floor" x="2874" y="356" width="60" height="10">
+   <properties>
+    <property name="type" value="fast"/>
    </properties>
   </object>
  </objectgroup>
@@ -751,23 +676,23 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,1760,0,1760,0,1761,0,0,0,0,0,0,1812,0,2661,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2662,0,0,0,0,2662,0,0,0,0,2662,0,0,0,0,0,2662,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2667,0,2667,0,2667,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2560,0,2555,0,2555,2555,0,2562,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1760,0,1760,0,2555,0,2555,0,1760,0,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,2561,0,0,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2608,0,2608,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2607,0,2607,0,0,0,0,0,0,0,0,0,0,0,2075,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2560,0,2561,0,2561,0,2562,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2075,2075,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,1760,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,1760,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1761,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,1760,0,1760,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,2554,2554,0,2554,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,1760,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,1760,0,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,2661,0,2608,0,2608,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,1761,0,0,0,1759,0,1760,0,1761,0,0,0,0,0,1759,0,1760,0,1761,0,0,1759,0,1760,0,1760,0,1760,0,1760,0,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1865,0,1867,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2611,0,2611,0,2668,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2075,2075,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,1760,0,1760,0,1760,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1865,0,0,0,0,0,0,1865,0,1866,0,1867,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,1760,0,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2075,2075,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1812,0,1761,0,0,0,1759,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2668,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1865,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,2558,0,2558,0,2561,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2075,2075,0,0,0,0,0,0,0,0,1865,0,1866,0,1866,0,1866,0,1866,1867,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,0,0,0,0,0,1865,0,1866,0,1867,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2610,0,2610,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2075,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1865,0,0,1866,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1865,0,1866,0,1867,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2560,0,1760,0,1760,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,1760,0,1760,0,1760,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,1760,0,1760,0,1760,0,1761,0,0,0,0,0,2075,2075,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1760,0,1760,0,1760,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1865,0,1867,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2611,0,2611,0,2668,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,1760,0,1760,0,1760,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1865,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,1760,0,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1812,0,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1865,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,2558,0,2558,0,2561,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1865,0,1866,0,1866,0,1866,0,1866,1867,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2610,0,2610,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1865,0,0,1866,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1865,0,1866,0,1867,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2560,0,1760,0,1760,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,1760,0,1760,0,1760,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,1760,0,1760,0,1760,0,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1760,0,1760,0,1760,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2666,0,2610,0,2610,0,0,0,0,0,0,0,0,0,0,0,0,2664,0,2664,0,2664,0,2664,0,2668,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2608,0,2608,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1865,0,1866,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,1760,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1866,0,1866,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,1761,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,1760,0,1760,0,1760,0,1760,0,1761,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,1760,0,1760,0,2555,0,2555,0,1760,0,1760,0,1760,0,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2560,0,2558,0,2558,0,2562,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1812,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,2554,0,2554,0,2554,0,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,1760,0,1760,0,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1761,0,0,0,0,0,0,0,1759,0,2554,0,2554,2556,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1761,0,0,0,0,1759,0,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,2561,0,1760,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1812,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,0,0,0,0,0,0,1760,0,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1812,0,0,0,1812,0,0,0,0,0,0,0,0,0,1759,0,1760,0,0,0,0,0,0,0,0,0,0,0,0,1814,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2557,0,2557,0,2559,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1812,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1814,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1812,0,0,0,0,0,0,0,0,0,0,0,0,1814,0,0,0,0,0,0,0,0,0,0,0,1759,0,2558,0,2558,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,2554,0,2554,0,2554,0,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,1760,0,1760,0,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1761,0,0,0,0,0,0,0,1759,0,2554,0,2554,2556,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1761,0,0,0,0,1759,0,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,2561,0,1760,0,6361,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1759,0,1760,0,0,0,0,0,0,0,1760,0,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1812,0,0,0,1812,0,0,0,0,0,0,0,0,0,1759,0,1760,0,0,0,0,0,0,0,0,0,0,0,0,1814,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2557,0,2557,0,2559,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1812,0,0,0,0,0,0,0,0,0,0,0,0,1814,0,0,0,0,0,0,0,0,0,0,0,1759,0,2558,0,2558,1761,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 1759,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,0,0,0,0,0,0,0,0,0,0,1760,0,0,0,0,0,0,0,1760,0,1760,0,1760,0,1760,0,0,0,0,0,0,0,0,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,0,0,0,0,1760,0,1760,0,1760,0,0,0,0,0,0,0,1813,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,0,0,0,0,1760,0,1760,0,0,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,0,0,0,0,0,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,0,0,1760,0,1760,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,0,0,0,0,1813,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,0,0,0,0,1760,0,1760,0,1760,0,1760,0,1760,1813,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1813,0,1760,0,1760,0,1760,0,1760,0,0,0,0
 </data>
  </layer>
- <layer id="4" name="noCollision" width="325" height="30">
+ <layer id="4" name="noCollision" width="325" height="30" visible="0">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -788,15 +713,15 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2978,2979,2980,2875,2876,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1760,0,1760,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2561,0,0,0,0,0,0,0,0,0,0,0,0,1760,0,1760,0,1760,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2561,0,0,2555,0,2561,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1760,0,1760,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2613,1813,2615,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2558,2558,2558,2558,0,0,0,0,0,0,0,0,0,0,0,0,0,2660,0,2608,0,2608,0,2667,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2561,0,0,0,0,0,0,2561,0,2561,0,0,0,0,0,0,0,1760,0,1760,0,0,0,0,1760,0,1760,0,1760,0,1760,0,1760,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2667,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1812,0,2611,0,2611,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1760,0,1760,0,1760,0,1760,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2561,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2667,0,0,0,0,0,0,2667,0,2667,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2667,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1812,0,2611,0,2611,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1760,0,1760,0,1760,0,1760,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2561,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1760,0,1760,0,1760,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2561,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1812,1813,1813,1813,1813,1813,1813,1813,1813,1814,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1760,0,0,0,0,0,1813,1813,1813,1814,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1780,1781,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2667,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2561,0,2558,0,2558,0,2562,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1866,0,1866,0,1866,0,1866,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2561,0,1813,0,0,0,0,0,0,1866,0,1866,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2667,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2561,0,2558,0,2558,0,2562,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1866,0,1866,0,1866,0,1866,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2561,0,1813,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2561,0,2561,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2611,0,2611,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1971,1972,1973,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2667,2667,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2667,0,2667,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2558,2557,2558,2557,2558,0,0,0,0,0,0,0,0,0,0,0,1760,0,1760,0,1760,0,1760,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2024,2025,2026,0,0,0,0,0,0,1760,0,2555,2555,2555,2555,0,1760,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2561,0,2561,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2561,0,2561,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2766,2767,2768,0,0,0,0,0,0,0,0,0,0,0,0,0,2561,0,2561,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2611,0,2611,0,2611,0,0,0,0,0,0,0,0,0,0,2666,0,2667,0,2667,0,2667,0,2667,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1971,1972,1973,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2077,2078,2079,0,0,0,0,0,0,0,0,2608,0,2608,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1971,1972,1973,0,0,0,0,1813,1813,1813,1813,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1971,1972,1973,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2819,2820,2821,0,0,0,0,0,0,0,0,0,0,0,0,0,2667,0,2667,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2024,2025,2026,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1760,0,1760,0,0,0,0,0,0,2130,2131,2132,1921,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2024,2025,2026,0,0,0,0,0,1866,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2561,0,2561,0,0,0,0,0,2024,2025,2026,0,0,0,0,0,0,2561,0,2561,0,2561,0,2561,0,2561,0,2561,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2872,2873,2874,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2077,2078,2079,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2183,2184,2185,1974,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2561,0,2561,0,2561,0,2561,0,2556,0,2556,0,2561,0,2561,0,2561,0,2077,2078,2079,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2558,0,2558,0,2558,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2613,1813,1813,1813,1814,0,0,0,0,2077,2078,2079,0,0,0,0,0,0,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,2615,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1760,0,2555,0,2555,0,1760,0,0,0,0,0,0,0,0,0,0,0,0,0,2928,2929,2926,2927,0,1760,0,1760,0,1760,0,1760,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2561,0,0,0,0,0,0,0,0,0,2556,0,2556,0,0,2822,2823,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2561,0,2027,2028,2131,2132,0,2561,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2561,0,2561,0,2562,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1813,1813,1813,1813,1813,1813,2614,2607,2608,2609,2608,2614,1813,1813,1813,1813,1813,2615,1921,2131,2132,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2561,0,1813,2611,2611,2611,2611,2611,1813,0,2561,0,2029,2030,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2133,2134,0,1813,1813,1813,1814,2027,2028,0,2133,2134,2131,2132,0,0,0,2561,0,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1760,0,2555,0,2555,0,1760,0,0,0,0,0,0,0,0,0,0,0,0,0,2928,2929,2926,2927,0,1760,0,1760,0,1760,0,1760,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2561,0,0,0,0,0,0,0,0,0,2556,0,2556,0,0,2822,2823,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2561,0,2027,2028,2131,2132,0,2561,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2561,0,2561,0,2562,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1813,1813,1813,1813,1813,1813,2614,2607,2608,2609,2608,2614,1813,1813,1813,1813,1813,0,1921,2131,2132,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2561,0,1813,2611,2611,2611,2611,2611,1813,0,2561,0,2029,2030,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2133,2134,0,1813,1813,1813,1814,2027,2028,0,2133,2134,2131,2132,0,0,0,2561,0,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1812,1813,2608,2608,2608,2608,2608,1813,1814,0,0,0,0,2558,0,2558,0,0,0,0,0,2981,2982,2979,2980,1812,1813,1813,1813,1813,1813,1813,1813,1814,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1813,0,0,0,0,0,0,0,0,6361,2608,2608,2608,2608,2608,2875,2876,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1813,0,2080,2081,2184,2185,0,1813,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2661,2661,2661,2661,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,0,1974,2184,2185,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,0,2082,2083,0,0,0,0,0,0,0,0,0,0,2558,0,2558,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2186,2187,2613,1813,1813,1813,1814,2080,2081,0,2186,2187,2184,2185,0,0,2613,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,2615,0,0,0,0,0,0,0,0,0,0,0,0,
 0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,1813,1813,1813,1813,1813,1813,1813,1813,1813,1760,0,1760,2610,2611,2611,2611,2612,1760,0,6362,1760,1760,0,1760,0,1760,1813,1760,1813,1760,1813,1760,1813,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,1813,1760,1813,1760,0,1760,0,1760,0,1760,1813,1760,1813,1760,1813,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,1813,1813,1813,1813,0,1760,0,1760,1813,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,1813,1760,1813,1813,1813,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,1813,1760,1813,1760,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,2614,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,1760,1760,0,1760,0,1760,1813,1760,1813,1760,1813,1760,1813,1760,1813,1760,1813,1760,1813,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,2611,2611,2611,2611,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,0,1760,1813,1760,1813,1760,0,1760,0,1760,0,1760,0,1760,0,1760,1813,1760,1813,1760,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,1813,1760,1760,1760,0,1760,0,1760,0,1760,1760,1760,1761
 </data>

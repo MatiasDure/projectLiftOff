@@ -54,9 +54,6 @@ public class Player:Sprite
     bool isCollidingWall;
     
 
-    //injured anim
-    int lastTimeCollided;
-
     //animation speed
     protected float animationSpeed;
 
@@ -141,11 +138,12 @@ public class Player:Sprite
         }
         if (isSliding && lastTimeSlide < Time.time )
         {
-            y = game.height - 50;
+            y -= 20;
             isSliding = false;
             rotation = 0;
             playerImg.x = 0;
             playerImg.rotation = 0;
+            
         }
     }
 
@@ -237,7 +235,7 @@ public class Player:Sprite
 
     void SetInjured()
     {       
-        lastTimeCollided = Time.time + 400;
+
         ReceiveDamage();
         isInjured = true;
         lastTimeSlide = 0;
@@ -265,6 +263,7 @@ public class Player:Sprite
 
     virtual protected void OnCollision(GameObject pOther)
     {
+        if (pOther is Player) return; 
         if(pOther is Collectable c)
         {
             switch(c.Type)
@@ -344,6 +343,8 @@ public class Player:Sprite
                 b.Death();
             }
         }
+
+        Console.WriteLine(pOther);
     }
 
     protected bool InjuredTimer()

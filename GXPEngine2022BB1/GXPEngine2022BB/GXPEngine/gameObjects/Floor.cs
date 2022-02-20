@@ -12,7 +12,7 @@ public class Floor:Sprite
 
     public string Type { get => _type; private set => _type = value; }
 
-    public Floor(TiledObject obj = null) : base("snowPath.png")
+    public Floor(TiledObject obj = null) : base("hitboxItems.jpg")
     {
         alpha = 0;
         collider.isTrigger = true;
