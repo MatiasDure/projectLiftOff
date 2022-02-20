@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.1" orientation="orthogonal" renderorder="right-down" width="325" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="259">
+<map version="1.8" tiledversion="1.8.1" orientation="orthogonal" renderorder="right-down" width="325" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="260">
  <tileset firstgid="1" name="Pillars (Foreground)" tilewidth="16" tileheight="16" tilecount="1590" columns="53">
   <image source="Pillars (Foreground).png" width="854" height="480"/>
  </tileset>
@@ -627,7 +627,7 @@
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
-  <object id="252" name="char1" type="Greek" x="121" y="399" width="39" height="64"/>
+  <object id="252" name="char1" type="Greek" x="59" y="388" width="39" height="64"/>
   <object id="254" name="Heart" type="Collectable" x="900.5" y="360" width="21" height="20">
    <properties>
     <property name="amountHealth" type="int" value="1"/>
@@ -657,6 +657,7 @@
     <property name="type" value="fast"/>
    </properties>
   </object>
+  <object id="259" name="char1" type="Egyptian" x="129.5" y="389" width="39" height="64"/>
  </objectgroup>
  <layer id="1" name="collision" width="325" height="30">
   <data encoding="csv">
