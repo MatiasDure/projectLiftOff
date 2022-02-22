@@ -48,7 +48,6 @@ public class Player:Sprite
     protected bool readyToUseItem;
     bool isSlowing;
     bool isCollidingWall;
-    
 
     //animation speed
     protected float animationSpeed;
@@ -152,11 +151,12 @@ public class Player:Sprite
         }
     }
 
-    protected bool AbilitySet(int pKey, int pAmountManaCost)
+    protected bool AbilitySet(int pKey, int pAmountManaCost, bool pAbilityCondition)
     {
         if (!Input.GetKeyDown(pKey) || 
             lastTimeManaUsed > Time.time ||
-            Attributes[1] < (pAmountManaCost - 1)) return false;
+            Attributes[1] < (pAmountManaCost - 1) || 
+            pAbilityCondition) return false;
 
         Attributes[1] -= pAmountManaCost;
         lastTimeManaUsed = Time.time + 2000;

@@ -32,7 +32,7 @@ public class Greek:Player
 
     protected override void Ability(int pKey, int pAmountManaCost)
     {
-        if (!AbilitySet(pKey, pAmountManaCost) || isBoosting) return;
+        if (!AbilitySet(pKey, pAmountManaCost, isBoosting)) return;
         charSounds[0].Play();
         isBoosting = true;
         timeBoost = Time.time + 500;

@@ -14,7 +14,7 @@ public class Egyptian : Player
         AddChild(playerImg);
         charSounds = new Sound[]
         {
-            new Sound("sounds/greekAbility.wav"),
+            new Sound("sounds/lifeGain.wav"),
             new Sound("sounds/egyptHurt.wav")
         };
     }
@@ -30,7 +30,8 @@ public class Egyptian : Player
 
     protected override void Ability(int pKey, int pAmountManaCost)
     {
-        if (!AbilitySet(pKey, pAmountManaCost) || Attributes[0] == 3) return;
+        if (!AbilitySet(pKey, pAmountManaCost, Attributes[0] >= 3)) return;
+        charSounds[0].Play();
         Attributes[0]++; //get hp back
     }
 
