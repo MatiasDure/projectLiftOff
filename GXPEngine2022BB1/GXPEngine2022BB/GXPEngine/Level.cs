@@ -80,9 +80,9 @@ public class Level : GameObject
         loader.autoInstance = true;
         loader.LoadObjectGroups();
 
-        
 
-        speedForScroller = currentLevel == "projectLevel1.tmx" ? 2f : 3f;
+
+        speedForScroller = ((MyGame)game).CurrentLvlIteration * 1.2f;//currentLevel == "projectLevel1.tmx" ? 2f : 3f;
 
         game.AddChild(parallaxScroller);
 

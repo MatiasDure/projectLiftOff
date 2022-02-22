@@ -8,6 +8,9 @@ public class MyGame : Game
 	string levelName = null;
 	string startName = "0";
 	int _loserNr;
+	
+	int _currentLvlIteration = 1;
+	public int CurrentLvlIteration { get => _currentLvlIteration; private set => _currentLvlIteration = value; }
 
 	public int LoserNr { get => _loserNr; set => _loserNr = value; }
 
@@ -70,11 +73,14 @@ public class MyGame : Game
         {
 			case "projectLevel0.tmx":
 				sound = 0;
+				CurrentLvlIteration = 1;
 				break;
 			case "projectLevel1.tmx":
+				CurrentLvlIteration++;
 				sound = 1;
 				break;
 			case "projectLevel2.tmx":
+				CurrentLvlIteration++;
 				sound = 2;
 				break;
 			case "projectLevel4.tmx":
@@ -84,6 +90,7 @@ public class MyGame : Game
 		}
 
 		if(sound != -1) channel = soundTracks[sound].Play();
+        Console.WriteLine(CurrentLvlIteration);
 		levelName = null;
     }
 
