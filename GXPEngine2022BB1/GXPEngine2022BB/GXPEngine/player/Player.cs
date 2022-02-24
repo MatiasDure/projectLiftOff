@@ -366,7 +366,6 @@ public class Player:Sprite
             }
         }
 
-        Console.WriteLine(pOther);
     }
 
     protected bool InjuredTimer()
