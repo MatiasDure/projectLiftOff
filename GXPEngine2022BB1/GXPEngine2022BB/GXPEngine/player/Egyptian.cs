@@ -21,10 +21,10 @@ public class Egyptian : Player
 
     protected override void Update()
     {
-        CheckMana(30);
+        CheckMana(50);
         Sliding(Key.O);
         Jumping(Key.P);
-        Ability(Key.I, 30);
+        Ability(Key.I, 50);
         base.Update();
     }
 

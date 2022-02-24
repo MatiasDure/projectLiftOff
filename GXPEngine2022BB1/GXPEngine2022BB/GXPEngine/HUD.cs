@@ -60,6 +60,6 @@ public class HUD:GameObject
     {
         mana.Clear(0, 0, 0, 100);
         mana.Fill(0, 0, 255);
-        mana.Rect(0, 0, player.Attributes[1], 20);
+        mana.Rect(0, 0, player.Attributes[1] * 2, 20);
     }
 }

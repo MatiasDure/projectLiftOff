@@ -23,10 +23,10 @@ public class Greek:Player
 
     protected override void Update()
     {
-        CheckMana(30);
+        CheckMana(25);
         Sliding(Key.Q);
         Jumping(Key.W);
-        Ability(Key.E,30);
+        Ability(Key.E,25);
         base.Update();
     }
 
@@ -35,7 +35,7 @@ public class Greek:Player
         if (!AbilitySet(pKey, pAmountManaCost, isBoosting)) return;
         charSounds[0].Play();
         isBoosting = true;
-        timeBoost = Time.time + 500;
+        timeBoost = Time.time + 800;
     }
 
 }

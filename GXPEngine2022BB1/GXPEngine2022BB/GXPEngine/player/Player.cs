@@ -41,8 +41,10 @@ public class Player:Sprite
 
     //player states
     protected bool isJumping;
+    protected bool hasJumped;
     protected bool isFalling;
     protected bool isInjured;
+    protected bool wasInjured;
     protected bool isBoosting;
     protected bool isSliding;
     protected bool readyToUseItem;
@@ -131,14 +133,17 @@ public class Player:Sprite
             this.rotation =  -90f;
             lastTimeSlide = Time.time + 1000;
         }
-        if (isSliding && lastTimeSlide < Time.time )
+
+        if(Input.GetKeyUp(pKey) || hasJumped || wasInjured)
         {
-            y -= 20;
-            isSliding = false;
-            rotation = 0;
-            playerImg.x = 0;
-            playerImg.rotation = 0;
-            
+            if (isSliding)
+            {
+                hasJumped = isSliding = wasInjured = false;
+                y -= 20;
+                rotation = 0;
+                playerImg.x = 0;
+                playerImg.rotation = 0;
+            }
         }
     }
 
@@ -181,14 +186,14 @@ public class Player:Sprite
         Collision col = MoveUntilCollision(0, velocityY);
         if(col != null)
         {
-            if (col.normal.y < 0) isJumping = isFalling = false;
+            if (col.normal.y < 0) isJumping = isFalling = hasJumped = false;
             velocityY = 0;
         }
 
-        if (Input.GetKeyDown(pToJump) && !isJumping && !isSliding)
+        if (Input.GetKeyDown(pToJump) && !isJumping)
         {
+            isJumping = hasJumped = true;
             velocityY += jumpForce;
-            isJumping = true;
         }
     }
 
@@ -200,7 +205,7 @@ public class Player:Sprite
             playerImg.SetCycle(12, 2); //injured animation
             if (playerImg.currentFrame == 13)
             {
-                isInjured = false;
+                isInjured = wasInjured = false;
                 animationSpeed = 0.2f;
             }
         }
@@ -233,8 +238,7 @@ public class Player:Sprite
     {       
 
         ReceiveDamage();
-        isInjured = true;
-        lastTimeSlide = 0;
+        isInjured = wasInjured = true;
         charSounds[1].Play(); //injured sound
     }
 
@@ -328,7 +332,7 @@ public class Player:Sprite
                         objectSounds[6].Play();
                         break;
                 }
-                lastTimePlayedSound = Time.time + 1000;
+                lastTimePlayedSound = Time.time + 1500;
             }
         }
 
