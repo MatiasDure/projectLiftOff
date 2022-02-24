@@ -120,7 +120,7 @@ public class Level : GameObject
 
     void scrolling(GameObject pTarget)
     {
-        int boundary = 150;
+        int boundary = 300;
         if (pTarget.x + x < boundary)
         {
             x = boundary - pTarget.x;

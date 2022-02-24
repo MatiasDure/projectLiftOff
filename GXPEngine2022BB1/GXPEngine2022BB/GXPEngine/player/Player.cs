@@ -17,7 +17,7 @@ public class Player:Sprite
     protected Sprite smallImg;
 
     //for respawn cloud
-    protected EasyDraw respawnCloud;
+    protected Sprite respawnCloud;
 
     //character's sounds
     protected Sound[] charSounds;
@@ -48,6 +48,7 @@ public class Player:Sprite
     protected bool isBoosting;
     protected bool isSliding;
     protected bool readyToUseItem;
+    protected bool addCloud;
     bool isSlowing;
     bool isCollidingWall;
 
@@ -72,6 +73,9 @@ public class Player:Sprite
     //sound player
     int lastTimePlayedSound = 0;
 
+    //respawn cloud timer
+    int timeRespawnCloud = 0;
+
     public Player(string pFileName,TiledObject obj = null):base(pFileName)
     {
         playerType = TypePlayer; //Determine which player each instance is, so we can manipulate them individually
@@ -81,6 +85,12 @@ public class Player:Sprite
         gravity = 0.35f;
         collider.isTrigger = true;
         animationSpeed = 0.2f;
+        respawnCloud = new Sprite("respawn.png", false, false);
+        respawnCloud.alpha = 0.85f;
+        respawnCloud.SetOrigin(respawnCloud.width/2,0);
+        respawnCloud.SetXY(game.width/2 + 127,-14);
+        respawnCloud.SetScaleXY(0.4f,0.4f);
+
         objectSounds = new Sound[]
         {
             new Sound("sounds/fastFloor.wav"), //when colliding with fast floor 0
@@ -97,6 +107,7 @@ public class Player:Sprite
     virtual protected void Update()
     {
         Edges();
+        CheckRespawnCloud();    
         CheckHP();
         if (isCollidingWall || y > game.height - this.height/2) CollidedWall();
         else HorizontalMovement();
@@ -230,13 +241,24 @@ public class Player:Sprite
     protected void CollidedWall()
     {
         SetInjured();
+        addCloud = true;
         x = scrollerPositionX;
         y = 0;
     }
 
+    protected void CheckRespawnCloud()
+    {
+        if(addCloud)
+        {
+            game.AddChild(respawnCloud);
+            addCloud = false;
+            timeRespawnCloud = Time.time + 1000;
+        }
+        if (timeRespawnCloud <= Time.time) game.RemoveChild(respawnCloud);
+    }
+
     void SetInjured()
     {       
-
         ReceiveDamage();
         isInjured = wasInjured = true;
         charSounds[1].Play(); //injured sound
