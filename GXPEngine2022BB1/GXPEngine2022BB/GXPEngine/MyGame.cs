@@ -56,6 +56,7 @@ public class MyGame : Game
 		if(channel != null) channel.Stop();
 		DestroyAll();
 		Level level = new Level(levelName);
+
 		huds = level.CreateLevel();
    
 		AddChild(level);
@@ -90,7 +91,6 @@ public class MyGame : Game
 		}
 
 		if(sound != -1) channel = soundTracks[sound].Play();
-        Console.WriteLine(CurrentLvlIteration);
 		levelName = null;
     }
 
