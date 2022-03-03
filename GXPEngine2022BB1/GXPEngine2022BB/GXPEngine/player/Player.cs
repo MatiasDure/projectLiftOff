@@ -142,19 +142,26 @@ public class Player:Sprite
             playerImg.rotation = 90;
             playerImg.x = 30;
             this.rotation =  -90f;
-            lastTimeSlide = Time.time + 1000;
+            lastTimeSlide = Time.time + 1500;
         }
 
-        if(Input.GetKeyUp(pKey) || hasJumped || wasInjured)
+        if(isSliding && (lastTimeSlide < Time.time || hasJumped || wasInjured))
         {
-            if (isSliding)
+            /*if (isSliding)
             {
                 hasJumped = isSliding = wasInjured = false;
                 y -= 20;
                 rotation = 0;
                 playerImg.x = 0;
                 playerImg.rotation = 0;
-            }
+                lastTimeSlide = 0;
+            }*/
+            hasJumped = isSliding = wasInjured = false;
+            y -= 20;
+            rotation = 0;
+            playerImg.x = 0;
+            playerImg.rotation = 0;
+            lastTimeSlide = 0;
         }
     }
 
